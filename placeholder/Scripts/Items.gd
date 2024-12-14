@@ -4,12 +4,16 @@ class_name Items
 
 enum TYPES {
 	BONE,
-	EMPTY
+	EMPTY,
+	ORANGE_KEY,
+	RED_KEY
 }
 
 const ITEM_TEXTURES = {
 	TYPES.EMPTY: preload("res://Assets/empty item.png"),
-	TYPES.BONE: preload("res://Assets/placeholder_100x100.png")
+	TYPES.BONE: preload("res://Assets/placeholder_100x100.png"),
+	TYPES.ORANGE_KEY: preload("res://Assets/orange key.png"),
+	TYPES.RED_KEY: preload("res://Assets/red key.png")
 }
 
 
