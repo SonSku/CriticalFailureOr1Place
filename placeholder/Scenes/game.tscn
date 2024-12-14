@@ -8,10 +8,13 @@ distance = -246.0
 [node name="Game" type="Node2D"]
 
 [node name="Skeleton" parent="." instance=ExtResource("1_q6oym")]
+position = Vector2(856, 800)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 536)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(960, 776)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_ldjo2")
