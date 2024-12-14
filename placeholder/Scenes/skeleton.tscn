@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck6wme2v28727"]
 
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_vaapv"]
-[ext_resource type="Texture2D" uid="uid://dcheo4rtyaqnc" path="res://Assets/skeletor.png" id="2_p4nys"]
+[ext_resource type="Texture2D" uid="uid://bs6snwvqlt56d" path="res://Assets/kostek.png" id="2_5gh6y"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m067i"]
-atlas = ExtResource("2_p4nys")
-region = Rect2(0, 0, 225, 225)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v60qc"]
+atlas = ExtResource("2_5gh6y")
+region = Rect2(0, 0, 204, 435)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yw53m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m067i")
+"texture": SubResource("AtlasTexture_v60qc")
 }],
 "loop": true,
 "name": &"default",
@@ -19,15 +19,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qilhh"]
-size = Vector2(223, 224)
+size = Vector2(203, 427)
 
 [node name="Skeleton" type="CharacterBody2D"]
+position = Vector2(4, -2)
 script = ExtResource("1_vaapv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(114, 113)
+position = Vector2(103, 217)
 sprite_frames = SubResource("SpriteFrames_yw53m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(114.5, 113)
+position = Vector2(99.5, 218.5)
 shape = SubResource("RectangleShape2D_qilhh")
