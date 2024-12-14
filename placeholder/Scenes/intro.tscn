@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqb37hyjlods"]
+[gd_scene load_steps=2 format=3 uid="uid://bk0jmax1snsv6"]
 
 [ext_resource type="Script" path="res://Scripts/intro.gd" id="1_k1f18"]
 
@@ -6,17 +6,17 @@
 script = ExtResource("1_k1f18")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 463.0
-offset_top = 68.0
-offset_right = 693.0
-offset_bottom = 198.0
+offset_left = 873.0
+offset_top = 351.0
+offset_right = 1103.0
+offset_bottom = 481.0
 text = "Graj"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 465.0
-offset_top = 338.0
-offset_right = 695.0
-offset_bottom = 468.0
+offset_left = 875.0
+offset_top = 621.0
+offset_right = 1105.0
+offset_bottom = 751.0
 text = "Wyjdź"
 
 [connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
