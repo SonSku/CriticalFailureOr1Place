@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1s1ssaxa6wlb"]
+
+[ext_resource type="Script" path="res://Scripts/room.gd" id="1_uydfx"]
+[ext_resource type="Texture2D" uid="uid://cs4rrxu10pbjo" path="res://Assets/scene_placeholder.png" id="2_7jny7"]
+[ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_m0hga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03eg7"]
+size = Vector2(197, 489)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgiv"]
+size = Vector2(2.08903, 20.9596)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h6qnh"]
+distance = -246.0
+
+[node name="room" type="Node2D"]
+script = ExtResource("1_uydfx")
+
+[node name="ScenePlaceholder" type="Sprite2D" parent="."]
+position = Vector2(960, 544)
+texture = ExtResource("2_7jny7")
+
+[node name="LeftDoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor"]
+position = Vector2(104, 776)
+shape = SubResource("RectangleShape2D_03eg7")
+
+[node name="RightDoor" type="Area2D" parent="."]
+position = Vector2(1816, 776)
+scale = Vector2(91.9087, 23.2828)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightDoor"]
+position = Vector2(0, 0.171799)
+shape = SubResource("RectangleShape2D_ntgiv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(960, 792)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_h6qnh")
+
+[node name="Skeleton" parent="." instance=ExtResource("3_m0hga")]
+position = Vector2(865, 584)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 536)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 440.0
+offset_top = 192.0
+offset_right = 480.0
+offset_bottom = 215.0
+scale = Vector2(15.7626, 5.22961)
+text = "SCENA 1"
+
+[connection signal="body_entered" from="LeftDoor" to="." method="_on_left_door_body_entered"]
+[connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]
