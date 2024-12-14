@@ -45,15 +45,23 @@ func _on_add_button_pressed() -> void:
 	else:
 		result_label.text = "Błędne dane!"
 
+var is_won = false
+
 func _on_check_button_pressed() -> void:
 	# Porównaj sekwencję gracza z poprawną
 	print(player_sequence)
 	print(correct_sequence)
 	if player_sequence == correct_sequence:
 		result_label.text = "Gratulacje! Poprawna sekwencja!"
+		is_won = true  # Oznacz, że gracz wygrał
 	else:
 		result_label.text = "Błąd! Spróbuj ponownie."
 		# Wyczyść sekwencję gracza
 	player_sequence.clear()
 	for child in sequence_list.get_children():
 		child.queue_free()  # Usuwa dziecko z węzła
+
+func _input(event: InputEvent) -> void:
+	# Jeśli gracz wygrał, każde kliknięcie przekierowuje do sceny wygranej
+	if is_won and event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://Scenes/Minigames/win.tscn")
