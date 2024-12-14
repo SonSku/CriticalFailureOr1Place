@@ -24,7 +24,6 @@ func eneteredCharacter(przycisk: Button) -> void:
 	if enteredPin.size()>3: return
 	else:
 		enteredPin.append(int(przycisk.text))
-	print(enteredPin)
 
 
 func _on_button_3_pressed() -> void:
