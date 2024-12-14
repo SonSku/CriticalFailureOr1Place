@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://blbcb0lbaohf"]
+
+[node name="Win" type="Node2D"]
+
+[node name="Success" type="Label" parent="."]
+offset_left = 211.0
+offset_top = 172.0
+offset_right = 1680.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 80
+text = "Sukces!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Code" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 489.0
+offset_right = 1593.0
+offset_bottom = 837.0
+theme_override_font_sizes/font_size = 80
+text = "Kod: 2587"
+horizontal_alignment = 1
+vertical_alignment = 1
