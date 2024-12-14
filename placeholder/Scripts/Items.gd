@@ -4,11 +4,11 @@ class_name Items
 
 enum TYPES {
 	BONE,
-	DEFAULT
+	EMPTY
 }
 
 const ITEM_TEXTURES = {
-	TYPES.DEFAULT: preload("res://icon.svg"),
+	TYPES.EMPTY: preload("res://Assets/empty item.png"),
 	TYPES.BONE: preload("res://icon.svg")
 }
 

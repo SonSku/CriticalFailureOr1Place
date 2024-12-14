@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj7w2jwxvvnha"]
+
+[ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="1_0n7c6"]
+
+[node name="TestInventoryScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Equipment" parent="CanvasLayer" instance=ExtResource("1_0n7c6")]
+position = Vector2(912, 984)

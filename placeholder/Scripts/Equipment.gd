@@ -3,6 +3,8 @@ extends Node
 
 class_name Equipment
 
+signal inventory_update
+
 var items = []
 var dice = [0, 0, 0, 0]
 
