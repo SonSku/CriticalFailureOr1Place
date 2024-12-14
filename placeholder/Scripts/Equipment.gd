@@ -3,28 +3,43 @@ extends Node
 
 class_name Equipment
 
-var items = {}
+var items = []
+var dice = [0, 0, 0, 0]
 
-var dice = [0,0,0,0]
+# Define a structure for the items to store type and amount
+class Item:
+	var type: Items.TYPES
+	var amount: int = 0
 
 func addItem(type: Items.TYPES, amt := 1) -> void:
-	if items.has(type):
-		items[type] += amt
-	else:
-		items[type] = amt
+	for item in items:
+		if item.type == type:
+			item.amount += amt
+			return
+	var new_item = Item.new()
+	new_item.type = type
+	new_item.amount = amt
+	items.append(new_item)
 
-# Jak chcemy usunąć pare to w ife to robić
 func removeItem(type: Items.TYPES, amt := 1) -> bool:
-	if items.has(type) and items[type] >= amt:
-		items[type] -= amt
-		return true
+	for item in items:
+		if item.type == type:
+			if item.amount >= amt:
+				item.amount -= amt
+				if item.amount == 0:
+					items.erase(item)
+				return true
+			return false
 	return false
-	
+
 func hasItem(type: Items.TYPES) -> bool:
-	return items.has(type)
-	
+	for item in items:
+		if item.type == type:
+			return true
+	return false
+
 func enableDice(d: Items.DICE):
 	dice[d] = 1
-	
+
 func disableDice(d: Items.DICE):
 	dice[d] = 0
