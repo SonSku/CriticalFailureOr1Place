@@ -17,16 +17,23 @@ func _input(ev):
 	if Input.is_action_just_pressed("move_up"):  # Użyj akcji zamiast klawiszy
 		if get_parent().robot_y != 0:
 			var temp_y_pos = get_parent().robot_y-1
-			robot.position.y -= 64
+			if get_parent().tablica_2d[get_parent().robot_x][temp_y_pos] == 0 or get_parent().tablica_2d[get_parent().robot_x][temp_y_pos] ==2:
+				robot.position.y -= 64
 	elif Input.is_action_just_pressed("move_down"):
 		if get_parent().robot_y != 4:
-			robot.position.y += 64
+			var temp_y_pos = get_parent().robot_y+1
+			if get_parent().tablica_2d[get_parent().robot_x][temp_y_pos] == 0 or get_parent().tablica_2d[get_parent().robot_x][temp_y_pos] == 2:
+				robot.position.y += 64
 	elif Input.is_action_just_pressed("move_left"):
 		if get_parent().robot_x != 0:
-			robot.position.x -= 64
+			var temp_x_pos = get_parent().robot_x-1
+			if get_parent().tablica_2d[temp_x_pos][get_parent().robot_y] == 0 or get_parent().tablica_2d[temp_x_pos][get_parent().robot_y]  == 2:
+				robot.position.x -= 64
 	elif Input.is_action_just_pressed("move_right"):
 		if get_parent().robot_x != 3:
-			robot.position.x += 64
+			var temp_x_pos = get_parent().robot_x+1
+			if get_parent().tablica_2d[temp_x_pos][get_parent().robot_y] == 0 or get_parent().tablica_2d[temp_x_pos][get_parent().robot_y] == 2:
+				robot.position.x += 64
 
 
 

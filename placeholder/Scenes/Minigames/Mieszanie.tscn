@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://dadr7fcegis3l"]
+
+[ext_resource type="Script" path="res://Scripts/Mixing.gd" id="1_r7ou4"]
+
+[node name="Mieszanie" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r7ou4")
+
+[node name="IngredientButtons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ingredient1" type="Button" parent="IngredientButtons"]
+layout_mode = 2
+text = "Składnik 1"
+
+[node name="Ingredient2" type="Button" parent="IngredientButtons"]
+layout_mode = 2
+text = "Składnik 6"
+
+[node name="Ingredient3" type="Button" parent="IngredientButtons"]
+layout_mode = 2
+text = "Składnik 3"
+
+[node name="Ingredient4" type="Button" parent="IngredientButtons"]
+layout_mode = 2
+text = "Składnik 5"
+
+[node name="Ingredient5" type="Button" parent="IngredientButtons"]
+layout_mode = 2
+text = "Składnik 2"
+
+[node name="Ingredient6" type="Button" parent="IngredientButtons"]
+layout_mode = 2
+text = "Składnik 4"
+
+[node name="SelectedIngredient" type="Label" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 601.0
+offset_right = 281.0
+offset_bottom = 674.0
+text = "Składnik:"
+
+[node name="AmountInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 586.0
+offset_right = 519.0
+offset_bottom = 683.0
+placeholder_text = "Wprowadź ilość (1-9)"
+alignment = 1
+
+[node name="AddButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 581.0
+offset_right = 797.0
+offset_bottom = 698.0
+text = "Dodaj"
+
+[node name="SequenceList" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 531.0
+offset_right = 1296.0
+offset_bottom = 632.0
+
+[node name="CheckButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 833.0
+offset_right = 642.0
+offset_bottom = 938.0
+text = "Sprawdź"
+
+[node name="ResultLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 960.0
+offset_right = 626.0
+offset_bottom = 1024.0
+text = "Dodane składniki:"
+
+[connection signal="pressed" from="AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
