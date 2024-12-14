@@ -6,7 +6,7 @@ extends Node2D
 func _ready() -> void:
 	Inventory.addItem(Items.TYPES.BONE)
 	showItems()
-	
+	Inventory.inventory_update.connect(showItems)
 	
 	
 	pass # Replace with function body.

@@ -22,6 +22,7 @@ func addItem(type: Items.TYPES, amt := 1) -> void:
 	new_item.type = type
 	new_item.amount = amt
 	items.append(new_item)
+	emit_signal("inventory_update")
 
 func removeItem(type: Items.TYPES, amt := 1) -> bool:
 	for item in items:
@@ -30,6 +31,7 @@ func removeItem(type: Items.TYPES, amt := 1) -> bool:
 				item.amount -= amt
 				if item.amount == 0:
 					items.erase(item)
+				emit_signal("inventory_update")
 				return true
 			return false
 	return false

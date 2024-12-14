@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://6pkmu6esn0jj"]
+[gd_scene load_steps=4 format=3 uid="uid://6pkmu6esn0jj"]
+
+[ext_resource type="Texture2D" uid="uid://bvqroi0tca5na" path="res://Assets/red.png" id="1_1ey5j"]
+[ext_resource type="Script" path="res://Scripts/ItemDropZone.gd" id="1_unptq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odomf"]
-size = Vector2(104, 96)
+size = Vector2(170, 160)
 
 [node name="DropZone" type="StaticBody2D" groups=["item_drop_zone"]]
+script = ExtResource("1_unptq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_odomf")
+
+[node name="Red" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("1_1ey5j")
