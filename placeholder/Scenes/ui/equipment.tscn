@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://blwrh6u27h1jv"]
+[gd_scene load_steps=2 format=3 uid="uid://blwrh6u27h1jv"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory.gd" id="1_taslm"]
 
 [node name="Equipment" type="Node2D"]
 
@@ -9,3 +11,4 @@ offset_bottom = 96.0
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_taslm")
