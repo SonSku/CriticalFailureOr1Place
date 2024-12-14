@@ -9,7 +9,7 @@ enum TYPES {
 
 const ITEM_TEXTURES = {
 	TYPES.EMPTY: preload("res://Assets/empty item.png"),
-	TYPES.BONE: preload("res://icon.svg")
+	TYPES.BONE: preload("res://Assets/placeholder_100x100.png")
 }
 
 

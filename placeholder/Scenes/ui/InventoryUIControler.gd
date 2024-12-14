@@ -6,6 +6,9 @@ extends Node2D
 func _ready() -> void:
 	Inventory.addItem(Items.TYPES.BONE)
 	showItems()
+	
+	
+	
 	pass # Replace with function body.
 
 

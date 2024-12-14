@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://0wcl4wp3ox55"]
+[gd_scene load_steps=4 format=3 uid="uid://0wcl4wp3ox55"]
 
 [ext_resource type="Texture2D" uid="uid://dly7lx2gnpir7" path="res://icon.svg" id="1_8sr1r"]
+[ext_resource type="Script" path="res://Scenes/other/DraggedItem.gd" id="1_xv20v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3o3p"]
 size = Vector2(128, 128)
 
 [node name="DraggedItem" type="Node2D"]
+script = ExtResource("1_xv20v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8sr1r")

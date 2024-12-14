@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="1_0n7c6"]
 
-[node name="TestInventoryScene" type="Node2D"]
+[node name="room" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
