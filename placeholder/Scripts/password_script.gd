@@ -11,6 +11,7 @@ var enteredPin = []
 @onready var button_8: Button = $Button8
 @onready var button_9: Button = $Button9
 @onready var pin: Label = $Pin
+@onready var button_11: Button = $Button11
 
 func _on_button_pressed() -> void:
 	eneteredCharacter(button)
@@ -75,3 +76,8 @@ func array_to_str(arr: Array) -> String:
 	
 func update_label() -> void:
 	pin.text = array_to_str(enteredPin)
+
+
+func _on_button_11_pressed() -> void:
+	eneteredCharacter(button_11)
+	update_label()
