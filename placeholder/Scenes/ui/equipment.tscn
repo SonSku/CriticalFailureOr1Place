@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://blwrh6u27h1jv"]
+
+[node name="Equipment" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

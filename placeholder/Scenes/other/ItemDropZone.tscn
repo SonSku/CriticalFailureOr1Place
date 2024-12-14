@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://6pkmu6esn0jj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odomf"]
+size = Vector2(104, 96)
+
+[node name="DropZone" type="StaticBody2D" groups=["item_drop_zone"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_odomf")
