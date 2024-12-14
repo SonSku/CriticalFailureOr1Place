@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://4gfwhd0oqjeu"]
+[gd_scene load_steps=7 format=3 uid="uid://4gfwhd0oqjeu"]
 
-[ext_resource type="Script" path="res://Scripts/00.gd" id="1_ffcuw"]
 [ext_resource type="Texture2D" uid="uid://hbjclxxwy6p1" path="res://Assets/grey.png" id="1_hqmvy"]
 [ext_resource type="Script" path="res://Scripts/one_line_puzzle.gd" id="1_mi0xr"]
 [ext_resource type="Texture2D" uid="uid://ffsv4d84blch" path="res://Assets/red.png" id="2_gd6ok"]
 [ext_resource type="Script" path="res://Scripts/robot.gd" id="2_q7uow"]
-[ext_resource type="Script" path="res://Scripts/43.gd" id="2_xbovr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0l43"]
 size = Vector2(64, 64)
@@ -17,7 +15,6 @@ size = Vector2(32, 32)
 script = ExtResource("1_mi0xr")
 
 [node name="00" type="Area2D" parent="."]
-script = ExtResource("1_ffcuw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="00"]
 position = Vector2(32, 32)
@@ -246,7 +243,6 @@ texture = ExtResource("1_hqmvy")
 
 [node name="43" type="Area2D" parent="."]
 position = Vector2(192, 256)
-script = ExtResource("2_xbovr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="43"]
 position = Vector2(32, 32)
@@ -271,4 +267,3 @@ position = Vector2(96, 32)
 shape = SubResource("RectangleShape2D_sfrj0")
 
 [connection signal="body_entered" from="00" to="00" method="_on_body_entered"]
-[connection signal="body_entered" from="43" to="43" method="_on_body_entered"]
