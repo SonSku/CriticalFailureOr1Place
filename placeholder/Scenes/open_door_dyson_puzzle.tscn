@@ -101,6 +101,13 @@ scale = Vector2(6.84617, 3.78158)
 theme_override_font_sizes/font_size = 0
 text = "X"
 
+[node name="Pin" type="Label" parent="."]
+offset_left = 552.0
+offset_top = 520.0
+offset_right = 592.0
+offset_bottom = 543.0
+scale = Vector2(6.92, 2.08)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -110,4 +117,4 @@ text = "X"
 [connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]
 [connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
 [connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]
-[connection signal="pressed" from="Button10" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button10" to="." method="_on_button_10_pressed"]
