@@ -58,8 +58,8 @@ script = ExtResource("1_vaapv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(103, 217)
 sprite_frames = SubResource("SpriteFrames_yw53m")
-animation = &"Walk"
-frame_progress = 0.19462
+animation = &"Idle"
+frame_progress = 0.8125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(99.5, 218.5)
