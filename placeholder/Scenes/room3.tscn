@@ -1,20 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs5f1rjesnbiu"]
+[gd_scene load_steps=9 format=3 uid="uid://bs5f1rjesnbiu"]
 
+[ext_resource type="Script" path="res://Scripts/hackaton_rooms.gd" id="1_i3ql0"]
 [ext_resource type="Texture2D" uid="uid://ce1na2ishga8p" path="res://Assets/hackaton_scene1_deactivated.png" id="1_ob58f"]
 [ext_resource type="PackedScene" uid="uid://ditm5udxpprjx" path="res://Scenes/skeleton.tscn" id="2_dhfir"]
 [ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="3_6te1w"]
+[ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="5_pq0xa"]
+[ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="6_4v3cm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehp0e"]
+size = Vector2(197, 489)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8t5v1"]
 
 [node name="room" type="Node2D"]
+script = ExtResource("1_i3ql0")
 
 [node name="HackatonScene1Deactivated" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(960, 536)
 texture = ExtResource("1_ob58f")
-
-[node name="Skeleton" parent="." instance=ExtResource("2_dhfir")]
-position = Vector2(275, 415)
-scale = Vector2(1.5, 1.5)
 
 [node name="Interactable" parent="." instance=ExtResource("3_6te1w")]
 position = Vector2(850, 705)
 scale = Vector2(-17.1221, 22.5677)
 puzzle_name = "clicker"
+
+[node name="LeftDoor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor"]
+position = Vector2(104, 776)
+shape = SubResource("RectangleShape2D_ehp0e")
+
+[node name="Skeleton" parent="." instance=ExtResource("2_dhfir")]
+position = Vector2(1504, 584)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(1920, 360)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_8t5v1")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Equipment" parent="CanvasGroup" instance=ExtResource("5_pq0xa")]
+position = Vector2(960, 1008)
+
+[node name="SideMenu" parent="CanvasGroup" instance=ExtResource("6_4v3cm")]
+
+[connection signal="body_entered" from="LeftDoor" to="." method="_on_left_door_body_entered"]
