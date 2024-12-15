@@ -1,16 +1,9 @@
-[gd_scene format=3 uid="uid://blbcb0lbaohf"]
+[gd_scene load_steps=2 format=3 uid="uid://81j5pdgq12hn"]
+
+[ext_resource type="Script" path="res://Scripts/win.gd" id="1_5o611"]
 
 [node name="Win" type="Node2D"]
-
-[node name="Success" type="Label" parent="."]
-offset_left = 211.0
-offset_top = 172.0
-offset_right = 1680.0
-offset_bottom = 356.0
-theme_override_font_sizes/font_size = 80
-text = "Sukces!"
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("1_5o611")
 
 [node name="Code" type="Label" parent="."]
 offset_left = 320.0
