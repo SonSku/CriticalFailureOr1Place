@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1s1ssaxa6wlb"]
+[gd_scene load_steps=8 format=3 uid="uid://d1s1ssaxa6wlb"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_uydfx"]
 [ext_resource type="Texture2D" uid="uid://cs4rrxu10pbjo" path="res://Assets/scene_placeholder.png" id="2_7jny7"]
 [ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_m0hga"]
+[ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_aow0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03eg7"]
 size = Vector2(197, 489)
@@ -53,6 +54,11 @@ offset_right = 480.0
 offset_bottom = 215.0
 scale = Vector2(15.7626, 5.22961)
 text = "SCENA 1"
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Equipment" parent="CanvasGroup" instance=ExtResource("4_aow0x")]
+position = Vector2(960, 1008)
 
 [connection signal="body_entered" from="LeftDoor" to="." method="_on_left_door_body_entered"]
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]

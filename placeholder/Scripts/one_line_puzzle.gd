@@ -12,7 +12,7 @@ func _ready():
 	tablica_2d.append([0, 0, 2, 0, 0])
 	tablica_2d.append([-1, -1, 0, 0, -1])
 	print(tablica_2d)
-	
+
 	for dziecko in get_children():
 		if dziecko is Area2D:
 			dziecko.connect("body_entered", _on_area2d_body_entered.bind(dziecko))
@@ -24,13 +24,25 @@ func _on_area2d_body_entered(cialo, pole):
 	robot_y = int(ids[0])
 	if tablica_2d[int(ids[1])][int(ids[0])] == 0:
 		tablica_2d[int(ids[1])][int(ids[0])] = 1
-	var new_texture = preload("res://Assets/green.png")
-	pole.get_node("Sprite2D").texture = new_texture
+	if robot_x == 0:
+		var new_texture = preload("res://Assets/clean_tile_L.png")
+		pole.get_node("Sprite2D").texture = new_texture
+	elif robot_x == 3:
+		var new_texture = preload("res://Assets/clean_tile_R.png")
+		pole.get_node("Sprite2D").texture = new_texture
+	if robot_y == 0:
+		var new_texture = preload("res://Assets/clean_tile_T.png")
+		pole.get_node("Sprite2D").texture = new_texture
+	elif robot_y == 4:
+		var new_texture = preload("res://Assets/clean_tile_B.png")
+		pole.get_node("Sprite2D").texture = new_texture
+	if robot_x > 0 and robot_x < 3 and robot_y > 0 and robot_y < 4:
+		var new_texture = preload("res://Assets/clean_tile_C.png")
+		pole.get_node("Sprite2D").texture = new_texture
 	if tablica_2d[int(ids[1])][int(ids[0])] == 2 and field_counter == 14:
 		print("YOU WON")
 	elif tablica_2d[int(ids[1])][int(ids[0])] != 2 and field_counter == 14:
 		print("HAHA YOU LOST!")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

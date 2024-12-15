@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://4gfwhd0oqjeu"]
+[gd_scene load_steps=12 format=3 uid="uid://4gfwhd0oqjeu"]
 
-[ext_resource type="Texture2D" uid="uid://hbjclxxwy6p1" path="res://Assets/grey.png" id="1_hqmvy"]
 [ext_resource type="Script" path="res://Scripts/one_line_puzzle.gd" id="1_mi0xr"]
-[ext_resource type="Texture2D" uid="uid://ffsv4d84blch" path="res://Assets/red.png" id="2_gd6ok"]
 [ext_resource type="Script" path="res://Scripts/robot.gd" id="2_q7uow"]
+[ext_resource type="Texture2D" uid="uid://m88ueid2886t" path="res://Assets/dirty_tile_corner.png" id="2_qmuta"]
+[ext_resource type="Texture2D" uid="uid://cchdnc815lui6" path="res://Assets/dirty_tile_T.png" id="3_rxg3g"]
+[ext_resource type="Texture2D" uid="uid://domtykjt8s8h3" path="res://Assets/dirty_tile_L.png" id="4_1aw4o"]
+[ext_resource type="Texture2D" uid="uid://cacgvwd0qn0e6" path="res://Assets/dirty_tile_C.png" id="5_22oyf"]
+[ext_resource type="Texture2D" uid="uid://bihn8sqrmffwp" path="res://Assets/dirty_tile_R.png" id="6_e64ig"]
+[ext_resource type="Texture2D" uid="uid://dd6dhfmgiel41" path="res://Assets/robot.png" id="7_8kjpa"]
+[ext_resource type="Texture2D" uid="uid://bvvhjqtpafvkf" path="res://Assets/dirty_tile_B.png" id="7_8tkgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0l43"]
 size = Vector2(64, 64)
@@ -22,8 +27,9 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="00"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.532971, 0.532573)
+texture = ExtResource("2_qmuta")
+flip_h = true
 
 [node name="01" type="Area2D" parent="."]
 position = Vector2(64, 0)
@@ -34,8 +40,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="01"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.530409, 0.528725)
+texture = ExtResource("3_rxg3g")
 
 [node name="02" type="Area2D" parent="."]
 position = Vector2(128, 0)
@@ -46,8 +52,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="02"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.530358, 0.53028)
+texture = ExtResource("3_rxg3g")
 
 [node name="03" type="Area2D" parent="."]
 position = Vector2(192, 0)
@@ -58,8 +64,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="03"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.532579, 0.527667)
+texture = ExtResource("2_qmuta")
 
 [node name="10" type="Area2D" parent="."]
 position = Vector2(0, 64)
@@ -70,8 +76,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="10"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.541731, 0.537382)
+texture = ExtResource("4_1aw4o")
 
 [node name="11" type="Area2D" parent="."]
 position = Vector2(64, 64)
@@ -82,8 +88,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="11"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.531554, 0.533078)
+texture = ExtResource("5_22oyf")
 
 [node name="12" type="Area2D" parent="."]
 position = Vector2(128, 64)
@@ -94,8 +100,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="12"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.530439, 0.531516)
+texture = ExtResource("5_22oyf")
 
 [node name="13" type="Area2D" parent="."]
 position = Vector2(192, 64)
@@ -106,8 +112,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="13"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.533488, 0.54043)
+texture = ExtResource("6_e64ig")
 
 [node name="20" type="Area2D" parent="."]
 position = Vector2(0, 128)
@@ -118,8 +124,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="20"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.547849, 0.528501)
+texture = ExtResource("4_1aw4o")
 
 [node name="21" type="Area2D" parent="."]
 position = Vector2(64, 128)
@@ -130,8 +136,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="21"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.527582, 0.528501)
+texture = ExtResource("5_22oyf")
 
 [node name="22" type="Area2D" parent="."]
 position = Vector2(128, 128)
@@ -142,8 +148,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="22"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.541775, 0.538038)
+texture = ExtResource("5_22oyf")
 
 [node name="23" type="Area2D" parent="."]
 position = Vector2(192, 128)
@@ -154,8 +160,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="23"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.533212, 0.536965)
+texture = ExtResource("6_e64ig")
 
 [node name="30" type="Area2D" parent="."]
 position = Vector2(0, 192)
@@ -166,8 +172,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="30"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.542391, 0.534518)
+texture = ExtResource("4_1aw4o")
 
 [node name="31" type="Area2D" parent="."]
 position = Vector2(64, 192)
@@ -178,8 +184,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="31"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.54474, 0.531637)
+texture = ExtResource("5_22oyf")
 
 [node name="32" type="Area2D" parent="."]
 position = Vector2(128, 192)
@@ -190,8 +196,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="32"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.531819, 0.535778)
+texture = ExtResource("5_22oyf")
 
 [node name="33" type="Area2D" parent="."]
 position = Vector2(192, 192)
@@ -202,8 +208,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="33"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.528035, 0.53238)
+texture = ExtResource("6_e64ig")
 
 [node name="40" type="Area2D" parent="."]
 position = Vector2(0, 256)
@@ -214,8 +220,10 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="40"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.540824, 0.536032)
+texture = ExtResource("2_qmuta")
+flip_h = true
+flip_v = true
 
 [node name="41" type="Area2D" parent="."]
 position = Vector2(64, 256)
@@ -226,8 +234,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="41"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.534183, 0.533943)
+texture = ExtResource("7_8tkgd")
 
 [node name="42" type="Area2D" parent="."]
 position = Vector2(128, 256)
@@ -238,8 +246,8 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="42"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.547309, 0.538346)
+texture = ExtResource("7_8tkgd")
 
 [node name="43" type="Area2D" parent="."]
 position = Vector2(192, 256)
@@ -250,8 +258,9 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="43"]
 position = Vector2(32, 32)
-scale = Vector2(0.176803, 0.185922)
-texture = ExtResource("1_hqmvy")
+scale = Vector2(0.532926, 0.533615)
+texture = ExtResource("2_qmuta")
+flip_v = true
 
 [node name="robot" type="CharacterBody2D" parent="."]
 script = ExtResource("2_q7uow")
@@ -259,8 +268,8 @@ script = ExtResource("2_q7uow")
 [node name="Red" type="Sprite2D" parent="robot"]
 z_index = 2
 position = Vector2(96, 32)
-scale = Vector2(0.180723, 0.175676)
-texture = ExtResource("2_gd6ok")
+scale = Vector2(0.393924, 0.284919)
+texture = ExtResource("7_8kjpa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="robot"]
 position = Vector2(96, 32)

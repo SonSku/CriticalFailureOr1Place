@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccxrbova5m64h"]
+[gd_scene load_steps=9 format=3 uid="uid://ccxrbova5m64h"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_h062d"]
 [ext_resource type="Texture2D" uid="uid://cs4rrxu10pbjo" path="res://Assets/scene_placeholder.png" id="2_s471v"]
 [ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_btc07"]
+[ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_i53fy"]
+[ext_resource type="PackedScene" uid="uid://4gfwhd0oqjeu" path="res://Scenes/one_line_puzzle.tscn" id="5_lxq52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03eg7"]
 size = Vector2(197, 489)
@@ -46,13 +48,12 @@ position = Vector2(848, 584)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 536)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 360.0
-offset_top = 224.0
-offset_right = 425.0
-offset_bottom = 247.0
-scale = Vector2(18.1325, 3.82042)
-text = "SCENA 2"
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Equipment" parent="CanvasGroup" instance=ExtResource("4_i53fy")]
+position = Vector2(960, 1008)
+
+[node name="one_line_puzzle" parent="." instance=ExtResource("5_lxq52")]
 
 [connection signal="body_entered" from="LeftDoor" to="." method="_on_left_door_body_entered"]
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]
