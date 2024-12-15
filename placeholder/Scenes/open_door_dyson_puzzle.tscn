@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkby5c6cvoubs"]
+[gd_scene load_steps=4 format=3 uid="uid://bkby5c6cvoubs"]
 
 [ext_resource type="Script" path="res://Scripts/password_script.gd" id="1_p5pqn"]
 [ext_resource type="Texture2D" uid="uid://b86tjtj5bt7j2" path="res://Assets/code pannel.png" id="2_r4on6"]
+[ext_resource type="AudioStream" uid="uid://cg6txw73ljocb" path="res://Assets/Sounds/odblokowanie_konsoli.mp3" id="3_bhimf"]
 
 [node name="open_door_dyson_puzzle" type="Node2D"]
 position = Vector2(336, 72)
@@ -129,6 +130,10 @@ offset_bottom = 711.0
 scale = Vector2(5.79352, 2.8412)
 theme_override_font_sizes/font_size = 0
 text = "0"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bhimf")
+volume_db = 8.062
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

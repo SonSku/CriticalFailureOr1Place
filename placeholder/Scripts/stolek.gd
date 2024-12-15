@@ -1,5 +1,4 @@
 extends Area2D
-var isIn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +11,11 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	isIn = true
-	if isIn and Input.is_action_pressed("place_on_chair"):
+	if LoadingScene.get_state("room2"):
 		body.position.x = 1308
-		body.position.y = 300
+		body.position.y = 400
+
+
+
+func _on_body_exited(body: Node2D) -> void:
+	body.position.y = 1008
