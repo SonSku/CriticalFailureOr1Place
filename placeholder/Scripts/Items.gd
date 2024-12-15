@@ -24,8 +24,6 @@ const ITEM_TEXTURES = {
 	TYPES.REDBUL: preload("res://Assets/ikona_redbull.png")
 }
 
-
-
 enum DICE {
 	EGYPT = 0,
 	BITEHACK = 1,
