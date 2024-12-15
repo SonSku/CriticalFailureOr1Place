@@ -59,7 +59,7 @@ rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_e5d4m")
 
 [node name="Interactable" parent="." instance=ExtResource("6_klypj")]
-position = Vector2(96, 712)
+position = Vector2(1416, 240)
 scale = Vector2(8.27225, 17.9188)
 puzzle_name = "one_line"
 

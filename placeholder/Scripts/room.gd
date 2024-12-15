@@ -11,6 +11,12 @@ func _ready() -> void:
 		var scene = s.instantiate()
 		scene.input_event.connect(_on_stolek_input_event)
 		self.add_child(scene)
+	if room_name == "room2" and LoadingScene.get_state(room_name) != null:
+		if LoadingScene.get_state(room_name)["stolek"] == "placed":
+			var s = preload("res://Scenes/stolek.tscn")
+			var scene = s.instantiate()
+			self.add_child(scene)
+			scene.position.x = 1308
 
 func handleItemDropped(zoneName):
 	if zoneName == "chair":
@@ -21,16 +27,13 @@ func handleItemDropped(zoneName):
 		var s = preload("res://Scenes/stolek.tscn")
 		var scene = s.instantiate()
 		self.add_child(scene)
+		scene.position.x = 1308
 	else:
 		print("IT IS THE WRONG ONEEEEEEEEE")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if room_name == "room2" and LoadingScene.get_state(room_name) != null:
-		if LoadingScene.get_state(room_name)["stolek"] == "placed":
-			var s = preload("res://Scenes/stolek.tscn")
-			var scene = s.instantiate()
-			self.add_child(scene)
+	pass
 
 
 func _on_left_door_body_entered(body: Node2D) -> void:

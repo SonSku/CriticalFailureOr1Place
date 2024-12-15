@@ -1,5 +1,4 @@
 extends StaticBody2D
-
 @export var item: Items.TYPES
 @export var zoneName := "default name"
 
