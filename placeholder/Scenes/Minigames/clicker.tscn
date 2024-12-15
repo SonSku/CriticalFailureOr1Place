@@ -1,15 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://nqvy11cf3v7m"]
 
 [ext_resource type="Script" path="res://Scripts/clicker.gd" id="1_f2e5s"]
-[ext_resource type="Texture2D" uid="uid://cl82xiwsk6683" path="res://Assets/battery_clicke_emptyr.png" id="2_kd0dd"]
-[ext_resource type="Texture2D" uid="uid://dktic2yrcjiuu" path="res://Assets/robocik_tlo.png" id="2_nl7yr"]
-[ext_resource type="Texture2D" uid="uid://cgknhbqxsq4va" path="res://Assets/battery_clicke_k.png" id="2_onxuc"]
-[ext_resource type="Texture2D" uid="uid://dma1kqku8eb6f" path="res://Assets/robocik_przycisk.png" id="5_ho8tw"]
+[ext_resource type="Texture2D" uid="uid://c6rk60j0fplop" path="res://Assets/battery_clicke_emptyr.png" id="2_kd0dd"]
+[ext_resource type="Texture2D" uid="uid://cvj7ct20ok3gl" path="res://Assets/robocik_tlo.png" id="2_nl7yr"]
+[ext_resource type="Texture2D" uid="uid://oio7n0r8bcag" path="res://Assets/battery_clicke_k.png" id="2_onxuc"]
+[ext_resource type="Texture2D" uid="uid://1wp01kjajsmt" path="res://Assets/robocik_przycisk.png" id="5_ho8tw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emk3h"]
 texture = ExtResource("2_onxuc")
 
 [node name="Clicker" type="Node2D"]
+z_index = 11
 script = ExtResource("1_f2e5s")
 
 [node name="Background" type="Sprite2D" parent="."]

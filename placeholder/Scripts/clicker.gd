@@ -1,5 +1,7 @@
 extends Node2D
 
+static var puzzel_name = "clicker"
+
 @export var progress_decrease_rate: float = 15.0  # Jak szybko pasek spada
 @export var progress_increase_amount: float = 5.0  # Jak dużo rośnie przy kliknięciu
 @export var max_progress: float = 100.0  # Maksymalna wartość paska
@@ -39,5 +41,17 @@ func _on_button_pressed():
 func win_game():
 	game_won = true
 	set_process(false)  # Zatrzymaj spadek paska
+	var state = {
+		"blocked": true
+	}
+	LoadingScene.save_state(puzzel_name, state)
+	get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+	Inventory.addItem(Items.TYPES.RED_KEY)
+	queue_free()
 	# Zmień scenę na scenę wygranej
 	get_tree().change_scene_to_file("res://Scenes/Minigames/win.tscn")
+	
+func _input(ev) -> void:
+	if Input.is_key_pressed(KEY_Q):
+		get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+		queue_free()
