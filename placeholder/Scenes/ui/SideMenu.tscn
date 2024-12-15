@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1haq3lnfh1nx"]
+
+[ext_resource type="Texture2D" uid="uid://bj0p8fxjp5tr6" path="res://Assets/side menu open.png" id="1_8emtu"]
+[ext_resource type="Script" path="res://Scripts/SideMenu.gd" id="1_qflrv"]
+[ext_resource type="Texture2D" uid="uid://dqm3masi8ccow" path="res://Assets/part_arms.png" id="2_1wsdn"]
+[ext_resource type="Texture2D" uid="uid://bn70loafmvwl1" path="res://Assets/part_legs.png" id="3_gc476"]
+[ext_resource type="Texture2D" uid="uid://crucmoqw38xdk" path="res://Assets/part_body.png" id="4_x53n2"]
+[ext_resource type="Texture2D" uid="uid://dyr0dde34580l" path="res://Assets/part_head.png" id="5_dihkr"]
+
+[sub_resource type="Animation" id="Animation_8lx5g"]
+resource_name = "SideMenuHide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-605, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0oswp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d6ddt"]
+resource_name = "SideMenuShow"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(-605, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ouuba"]
+_data = {
+"RESET": SubResource("Animation_0oswp"),
+"SideMenuHide": SubResource("Animation_8lx5g"),
+"SideMenuShow": SubResource("Animation_d6ddt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3fc"]
+size = Vector2(85, 120)
+
+[node name="SideMenu" type="Node2D"]
+script = ExtResource("1_qflrv")
+
+[node name="SideMenuOpen" type="Sprite2D" parent="."]
+position = Vector2(328.5, 463.5)
+texture = ExtResource("1_8emtu")
+
+[node name="PartArms" type="Sprite2D" parent="."]
+position = Vector2(199, 461)
+texture = ExtResource("2_1wsdn")
+
+[node name="PartLegs" type="Sprite2D" parent="."]
+position = Vector2(199, 461)
+texture = ExtResource("3_gc476")
+
+[node name="PartBody" type="Sprite2D" parent="."]
+position = Vector2(199, 461)
+texture = ExtResource("4_x53n2")
+
+[node name="PartHead" type="Sprite2D" parent="."]
+position = Vector2(199, 461)
+texture = ExtResource("5_dihkr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ouuba")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(600, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32.5, 65)
+shape = SubResource("RectangleShape2D_de3fc")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

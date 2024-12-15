@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://5l00fwvvugyl"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://bj7w2jwxvvnha"]
+>>>>>>> 43a2a8e9e4717c8971a060cdcebb05a66ffe748d
 
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="1_0n7c6"]
 [ext_resource type="Script" path="res://Scripts/test_inventory_scene.gd" id="1_rcutg"]
 [ext_resource type="PackedScene" uid="uid://6pkmu6esn0jj" path="res://Scenes/other/ItemDropZone.tscn" id="2_ah5ui"]
+[ext_resource type="PackedScene" uid="uid://b1haq3lnfh1nx" path="res://Scenes/ui/SideMenu.tscn" id="3_3fj8e"]
 
 [node name="room" type="Node2D"]
 script = ExtResource("1_rcutg")
@@ -11,6 +16,8 @@ script = ExtResource("1_rcutg")
 
 [node name="Equipment" parent="CanvasLayer" instance=ExtResource("1_0n7c6")]
 position = Vector2(912, 984)
+
+[node name="SideMenu" parent="CanvasLayer" instance=ExtResource("3_3fj8e")]
 
 [node name="DropZone" parent="." instance=ExtResource("2_ah5ui")]
 position = Vector2(1232, 488)
