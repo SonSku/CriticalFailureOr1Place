@@ -19,9 +19,9 @@ const ITEM_TEXTURES = {
 	TYPES.ORANGE_KEY: preload("res://Assets/orange key.png"),
 	TYPES.RED_KEY: preload("res://Assets/red key.png"),
 	TYPES.CHAIR: preload("res://Assets/stolek_icon.png"),
-	TYPES.ROMPER: preload("res://Assets/romperek.png"),
-	TYPES.KOMPOT: preload("res://Assets/kompot.png"),
-	TYPES.REDBUL: preload("res://Assets/redbull.png")
+	TYPES.ROMPER: preload("res://Assets/ikona_romperek.png"),
+	TYPES.KOMPOT: preload("res://Assets/ikona_kompot.png"),
+	TYPES.REDBUL: preload("res://Assets/ikona_redbull.png")
 }
 
 
