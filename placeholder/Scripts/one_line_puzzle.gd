@@ -1,5 +1,7 @@
 extends Node2D
 
+static var puzzel_name = "one_line"
+
 var tablica_2d
 var robot_x = 1
 var robot_y = 0
@@ -41,8 +43,19 @@ func _on_area2d_body_entered(cialo, pole):
 		pole.get_node("Sprite2D").texture = new_texture
 	if tablica_2d[int(ids[1])][int(ids[0])] == 2 and field_counter == 14:
 		print("YOU WON")
+		var state = {
+			"blocked": true
+		}
+		LoadingScene.save_state(puzzel_name, state)
+		get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+		queue_free()
 	elif tablica_2d[int(ids[1])][int(ids[0])] != 2 and field_counter == 14:
 		print("HAHA YOU LOST!")
 
 func _process(delta: float) -> void:
 	pass
+	
+func _input(ev) -> void:
+	if Input.is_key_pressed(KEY_Q):
+		get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+		queue_free()

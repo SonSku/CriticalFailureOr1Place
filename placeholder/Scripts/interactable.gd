@@ -24,6 +24,5 @@ func _input(ev) -> void:
 			globBody.enabled = false
 			LoadingScene.display_minigame(puzzle_name)
 
-
 func _on_body_exited(body: Node2D) -> void:
 	isSkeletIn = false

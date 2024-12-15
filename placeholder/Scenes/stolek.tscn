@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://comqjt3nfh15s"]
+
+[ext_resource type="Script" path="res://Scripts/stolek.gd" id="1_gduuj"]
+[ext_resource type="Texture2D" uid="uid://c4pdnntnfxuv3" path="res://Assets/stolek.png" id="2_kbsuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvy6y"]
+size = Vector2(192, 266)
+
+[node name="Stolek" type="Area2D"]
+position = Vector2(1448, 712)
+script = ExtResource("1_gduuj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(104, 128)
+texture = ExtResource("2_kbsuj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(104, 123)
+shape = SubResource("RectangleShape2D_bvy6y")

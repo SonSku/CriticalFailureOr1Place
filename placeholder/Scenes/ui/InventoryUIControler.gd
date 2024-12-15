@@ -23,6 +23,8 @@ func showItems():
 		var sprite = child.get_node("Sprite2D")
 		if i < Inventory.items.size():
 			sprite.texture = Items.ITEM_TEXTURES[Inventory.items[i].type]
+			child.item = Inventory.items[i].type
 		else:
 			sprite.texture = Items.ITEM_TEXTURES[Items.TYPES.EMPTY]
+			child.item = Items.TYPES.EMPTY
 		i += 1
