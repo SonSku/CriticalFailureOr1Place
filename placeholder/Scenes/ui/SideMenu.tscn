@@ -77,18 +77,22 @@ position = Vector2(328.5, 463.5)
 texture = ExtResource("1_8emtu")
 
 [node name="PartArms" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.172549)
 position = Vector2(199, 461)
 texture = ExtResource("2_1wsdn")
 
 [node name="PartLegs" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.172549)
 position = Vector2(199, 461)
 texture = ExtResource("3_gc476")
 
 [node name="PartBody" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.172549)
 position = Vector2(199, 461)
 texture = ExtResource("4_x53n2")
 
 [node name="PartHead" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.172549)
 position = Vector2(199, 461)
 texture = ExtResource("5_dihkr")
 

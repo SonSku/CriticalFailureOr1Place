@@ -31,6 +31,8 @@ func toggleDisplay():
 func updateInv():
 	if Inventory.dice[Items.DICE.BITEHACK]:
 		add_child(hackCube)
+		get_node("PartBody").modulate.a = 255
+		
 
 
 func _input(event: InputEvent) -> void:
