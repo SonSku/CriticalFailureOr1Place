@@ -1,16 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://81j5pdgq12hn"]
+[gd_scene load_steps=3 format=3 uid="uid://81j5pdgq12hn"]
 
 [ext_resource type="Script" path="res://Scripts/win.gd" id="1_5o611"]
+[ext_resource type="Texture2D" uid="uid://bop6wej4n0vb7" path="res://Assets/menu_end.png" id="2_xx7sh"]
 
 [node name="Win" type="Node2D"]
 script = ExtResource("1_5o611")
 
 [node name="Code" type="Label" parent="."]
+z_index = 5
 offset_left = 320.0
-offset_top = 489.0
+offset_top = 656.0
 offset_right = 1593.0
-offset_bottom = 837.0
+offset_bottom = 1004.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "Kod: 2587"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 544)
+texture = ExtResource("2_xx7sh")
