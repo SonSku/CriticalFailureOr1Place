@@ -18,4 +18,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	body.position.y = 1008
+	if LoadingScene.get_state("room2"):
+		body.position.y = 1008
