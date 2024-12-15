@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsn1gnxfl3dw2"]
+
+[ext_resource type="Script" path="res://Scenes/other/SwitchPanel.gd" id="1_c4p24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugjtp"]
+size = Vector2(288, 284)
+
+[node name="SwitchPanel" type="Node2D"]
+script = ExtResource("1_c4p24")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(145, 146)
+scale = Vector2(1, 1.03125)
+shape = SubResource("RectangleShape2D_ugjtp")
