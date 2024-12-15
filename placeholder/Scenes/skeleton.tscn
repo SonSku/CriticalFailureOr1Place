@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+[gd_scene load_steps=7 format=3 uid="uid://ck6wme2v28727"]
+
+[ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_vaapv"]
+[ext_resource type="Texture2D" uid="uid://bs6snwvqlt56d" path="res://Assets/kostek.png" id="2_5gh6y"]
+[ext_resource type="AudioStream" uid="uid://jwk3cgkl0qw3" path="res://Assets/Sounds/chodzenie_szkieleta2.mp3" id="3_bebv3"]
+=======
 [gd_scene load_steps=10 format=3 uid="uid://ck6wme2v28727"]
 
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_vaapv"]
 [ext_resource type="Texture2D" uid="uid://cpwgc8rp23gg7" path="res://Assets/kostek.png" id="2_5gh6y"]
 [ext_resource type="Texture2D" uid="uid://c6x35c0y4xyfa" path="res://Assets/kostek_anim_sheet.png" id="3_utkbe"]
+>>>>>>> 69fa0e6850d277f4d32dd345b5d181721bf09328
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weyib"]
 atlas = ExtResource("3_utkbe")
@@ -64,3 +72,8 @@ frame_progress = 0.8125
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(99.5, 218.5)
 shape = SubResource("RectangleShape2D_qilhh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bebv3")
+volume_db = 20.255
+autoplay = true

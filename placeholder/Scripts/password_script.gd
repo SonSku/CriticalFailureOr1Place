@@ -16,6 +16,7 @@ const properPin = [2, 2, 8, 0]
 @onready var pin: Label = $Pin
 @onready var button_11: Button = $Button11
 const Skeleton = preload("res://Scripts/skeleton.gd")
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func compare_array(arr1: Array, arr2: Array) -> bool:
 	for i in range(arr1.size()):
@@ -25,12 +26,15 @@ func compare_array(arr1: Array, arr2: Array) -> bool:
 func _process(delta) -> void:
 	if enteredPin.size() == 4:
 		if compare_array(enteredPin, properPin):
+			if !audio_stream_player_2d.is_playing():
+				audio_stream_player_2d.play()
 			var state = {
 				"blocked": true
 			}
 			LoadingScene.save_state(puzzel_name, state)
 			Inventory.addItem(Items.TYPES.ORANGE_KEY)
 			get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+			await get_tree().create_timer(1).timeout
 			queue_free()
 
 func _on_button_pressed() -> void:

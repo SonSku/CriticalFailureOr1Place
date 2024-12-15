@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 const skelet_id = 'skelet_id'
 const SKELETON = preload("res://Scenes/skeleton.tscn")
 const GAME = preload("res://Scenes/game.tscn")
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var enabled = true
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	if gotPos:
 		self.position = gotPos["position"]
 	
+	
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -20,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	if enabled:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
+			if !audio_stream_player_2d.is_playing():
+				audio_stream_player_2d.play()
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
