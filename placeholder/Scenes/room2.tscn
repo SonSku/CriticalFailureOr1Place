@@ -50,7 +50,6 @@ position = Vector2(960, 536)
 position = Vector2(960, 1008)
 
 [node name="SideMenu" parent="CanvasGroup" instance=ExtResource("5_edy5w")]
-visible = false
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 

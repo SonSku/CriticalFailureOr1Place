@@ -7,7 +7,10 @@ enum TYPES {
 	EMPTY,
 	ORANGE_KEY,
 	RED_KEY,
-	CHAIR
+	CHAIR,
+	ROMPER,
+	KOMPOT,
+	REDBUL
 }
 
 const ITEM_TEXTURES = {
@@ -15,7 +18,10 @@ const ITEM_TEXTURES = {
 	TYPES.BONE: preload("res://Assets/placeholder_100x100.png"),
 	TYPES.ORANGE_KEY: preload("res://Assets/orange key.png"),
 	TYPES.RED_KEY: preload("res://Assets/red key.png"),
-	TYPES.CHAIR: preload("res://Assets/stolek_icon.png")
+	TYPES.CHAIR: preload("res://Assets/stolek_icon.png"),
+	TYPES.ROMPER: preload("res://Assets/romperek.png"),
+	TYPES.KOMPOT: preload("res://Assets/kompot.png"),
+	TYPES.REDBUL: preload("res://Assets/redbull.png")
 }
 
 

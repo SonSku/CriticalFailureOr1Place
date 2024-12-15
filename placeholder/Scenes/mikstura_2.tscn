@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhq3drjcsgeem"]
+
+[ext_resource type="Texture2D" uid="uid://bycbryfu2vfio" path="res://Assets/kompot.png" id="1_un2j5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kped5"]
+size = Vector2(126.089, 190.484)
+
+[node name="mikstura2" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_un2j5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.62878, -2.32458e-06)
+scale = Vector2(1.26306, 1.09196)
+shape = SubResource("RectangleShape2D_kped5")

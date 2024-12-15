@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://iqkgx1etylku"]
+
+[ext_resource type="Texture2D" uid="uid://ychj3e1c78fd" path="res://Assets/redbull.png" id="1_dtef2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycjng"]
+size = Vector2(64, 128)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dtef2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ycjng")

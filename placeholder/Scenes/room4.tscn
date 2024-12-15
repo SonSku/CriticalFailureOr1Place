@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk3d4heynhqct"]
+[gd_scene load_steps=13 format=3 uid="uid://bk3d4heynhqct"]
 
+[ext_resource type="Script" path="res://Scripts/hackaton_rooms.gd" id="1_2g7jx"]
 [ext_resource type="Texture2D" uid="uid://cu43t34fjcdpn" path="res://Assets/hackaton_scene2_justTheTable.png" id="1_148s1"]
-[ext_resource type="Script" path="res://Scripts/room.gd" id="1_c8poy"]
 [ext_resource type="PackedScene" uid="uid://ditm5udxpprjx" path="res://Scenes/skeleton.tscn" id="3_kgyn6"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_lra4l"]
 [ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_007jf"]
 [ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_0qg5c"]
+[ext_resource type="PackedScene" uid="uid://dysgiqoefsqp0" path="res://Scenes/mikstura_1.tscn" id="7_i27nh"]
+[ext_resource type="PackedScene" uid="uid://bhq3drjcsgeem" path="res://Scenes/mikstura_2.tscn" id="8_2wdxm"]
+[ext_resource type="PackedScene" uid="uid://iqkgx1etylku" path="res://Scenes/mikstura_3.tscn" id="9_jinsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgiv"]
 size = Vector2(2.08903, 20.9596)
@@ -16,8 +19,7 @@ distance = -246.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e5d4m"]
 
 [node name="room" type="Node2D"]
-script = ExtResource("1_c8poy")
-room_name = "room2"
+script = ExtResource("1_2g7jx")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 544)
@@ -62,4 +64,16 @@ position = Vector2(1416, 240)
 scale = Vector2(8.27225, 17.9188)
 puzzle_name = "one_line"
 
+[node name="mikstura1" parent="." instance=ExtResource("7_i27nh")]
+position = Vector2(544, 584)
+
+[node name="mikstura2" parent="." instance=ExtResource("8_2wdxm")]
+position = Vector2(1160, 584)
+
+[node name="mikstura3" parent="." instance=ExtResource("9_jinsl")]
+position = Vector2(704, 608)
+
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]
+[connection signal="input_event" from="mikstura1" to="." method="_on_mikstura_1_input_event"]
+[connection signal="input_event" from="mikstura2" to="." method="_on_mikstura_2_input_event"]
+[connection signal="input_event" from="mikstura3" to="." method="_on_mikstura_3_input_event"]
