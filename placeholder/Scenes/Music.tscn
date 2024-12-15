@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqy0badfjvisd"]
+
+[ext_resource type="AudioStream" uid="uid://dpxgktc574cm6" path="res://Assets/Sounds/groovy-ambient-funk-201745.mp3" id="1_se76m"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_se76m")
+autoplay = true

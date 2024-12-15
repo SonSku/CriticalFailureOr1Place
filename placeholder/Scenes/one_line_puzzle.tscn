@@ -1,14 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://4gfwhd0oqjeu"]
+[gd_scene load_steps=15 format=3 uid="uid://4gfwhd0oqjeu"]
 
 [ext_resource type="Script" path="res://Scripts/one_line_puzzle.gd" id="1_mi0xr"]
+[ext_resource type="Texture2D" uid="uid://dj4sidoeq50s" path="res://Assets/dirty_tile_corner_dziura.png" id="2_i7mf8"]
 [ext_resource type="Script" path="res://Scripts/robot.gd" id="2_q7uow"]
-[ext_resource type="Texture2D" uid="uid://m88ueid2886t" path="res://Assets/dirty_tile_corner.png" id="2_qmuta"]
 [ext_resource type="Texture2D" uid="uid://cchdnc815lui6" path="res://Assets/dirty_tile_T.png" id="3_rxg3g"]
 [ext_resource type="Texture2D" uid="uid://domtykjt8s8h3" path="res://Assets/dirty_tile_L.png" id="4_1aw4o"]
 [ext_resource type="Texture2D" uid="uid://cacgvwd0qn0e6" path="res://Assets/dirty_tile_C.png" id="5_22oyf"]
 [ext_resource type="Texture2D" uid="uid://bihn8sqrmffwp" path="res://Assets/dirty_tile_R.png" id="6_e64ig"]
+[ext_resource type="Texture2D" uid="uid://b2mwykau7pccg" path="res://Assets/robot_vent.png" id="6_jduh7"]
 [ext_resource type="Texture2D" uid="uid://dd6dhfmgiel41" path="res://Assets/robot.png" id="7_8kjpa"]
 [ext_resource type="Texture2D" uid="uid://bvvhjqtpafvkf" path="res://Assets/dirty_tile_B.png" id="7_8tkgd"]
+[ext_resource type="Texture2D" uid="uid://6kbsc8pc32vs" path="res://Assets/dirty_tile_side_dziura.png" id="7_fnd4o"]
+[ext_resource type="Texture2D" uid="uid://c5x4ux4c0opa6" path="res://Assets/dirty_tile_center_dziura.png" id="8_48m10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0l43"]
 size = Vector2(64, 64)
@@ -30,7 +33,7 @@ shape = SubResource("RectangleShape2D_i0l43")
 [node name="Sprite2D" type="Sprite2D" parent="00"]
 position = Vector2(32, 32)
 scale = Vector2(0.532971, 0.532573)
-texture = ExtResource("2_qmuta")
+texture = ExtResource("2_i7mf8")
 flip_h = true
 
 [node name="01" type="Area2D" parent="."]
@@ -67,7 +70,7 @@ shape = SubResource("RectangleShape2D_i0l43")
 [node name="Sprite2D" type="Sprite2D" parent="03"]
 position = Vector2(32, 32)
 scale = Vector2(0.532579, 0.527667)
-texture = ExtResource("2_qmuta")
+texture = ExtResource("2_i7mf8")
 
 [node name="10" type="Area2D" parent="."]
 position = Vector2(0, 64)
@@ -105,6 +108,12 @@ position = Vector2(32, 32)
 scale = Vector2(0.530439, 0.531516)
 texture = ExtResource("5_22oyf")
 
+[node name="Sprite2D2" type="Sprite2D" parent="12"]
+z_index = 4
+position = Vector2(32.1485, 95.8248)
+scale = Vector2(0.520367, 0.52747)
+texture = ExtResource("6_jduh7")
+
 [node name="13" type="Area2D" parent="."]
 position = Vector2(192, 64)
 
@@ -114,8 +123,9 @@ shape = SubResource("RectangleShape2D_i0l43")
 
 [node name="Sprite2D" type="Sprite2D" parent="13"]
 position = Vector2(32, 32)
+rotation = 1.57079
 scale = Vector2(0.533488, 0.54043)
-texture = ExtResource("6_e64ig")
+texture = ExtResource("7_fnd4o")
 
 [node name="20" type="Area2D" parent="."]
 position = Vector2(0, 128)
@@ -139,7 +149,7 @@ shape = SubResource("RectangleShape2D_i0l43")
 [node name="Sprite2D" type="Sprite2D" parent="21"]
 position = Vector2(32, 32)
 scale = Vector2(0.527582, 0.528501)
-texture = ExtResource("5_22oyf")
+texture = ExtResource("8_48m10")
 
 [node name="22" type="Area2D" parent="."]
 position = Vector2(128, 128)
@@ -223,7 +233,7 @@ shape = SubResource("RectangleShape2D_i0l43")
 [node name="Sprite2D" type="Sprite2D" parent="40"]
 position = Vector2(32, 32)
 scale = Vector2(0.540824, 0.536032)
-texture = ExtResource("2_qmuta")
+texture = ExtResource("2_i7mf8")
 flip_h = true
 flip_v = true
 
@@ -261,10 +271,11 @@ shape = SubResource("RectangleShape2D_i0l43")
 [node name="Sprite2D" type="Sprite2D" parent="43"]
 position = Vector2(32, 32)
 scale = Vector2(0.532926, 0.533615)
-texture = ExtResource("2_qmuta")
+texture = ExtResource("2_i7mf8")
 flip_v = true
 
 [node name="robot" type="CharacterBody2D" parent="."]
+z_index = 5
 script = ExtResource("2_q7uow")
 
 [node name="Red" type="Sprite2D" parent="robot"]
