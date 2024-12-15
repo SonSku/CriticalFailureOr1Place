@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 900.0
 const JUMP_VELOCITY = -400.0
 const skelet_id = 'skelet_id'
 const SKELETON = preload("res://Scenes/skeleton.tscn")
