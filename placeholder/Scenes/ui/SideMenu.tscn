@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://cmpn4xyxj12ug"]
 
-[ext_resource type="Texture2D" uid="uid://dn8mnccyvsr7s" path="res://Assets/side menu open.png" id="1_8emtu"]
+[ext_resource type="Texture2D" uid="uid://blh5ydyrniq5v" path="res://Assets/side menu open.png" id="1_8emtu"]
 [ext_resource type="Script" path="res://Scripts/SideMenu.gd" id="1_qflrv"]
-[ext_resource type="Texture2D" uid="uid://b4o5j7a0l48xj" path="res://Assets/part_arms.png" id="2_1wsdn"]
-[ext_resource type="Texture2D" uid="uid://bwn5en6v6aqtt" path="res://Assets/part_legs.png" id="3_gc476"]
-[ext_resource type="Texture2D" uid="uid://b8wfuty0jgqxe" path="res://Assets/part_body.png" id="4_x53n2"]
-[ext_resource type="Texture2D" uid="uid://wua4qmelyqbk" path="res://Assets/part_head.png" id="5_dihkr"]
+[ext_resource type="Texture2D" uid="uid://bq10lkekcjgj0" path="res://Assets/part_arms.png" id="2_1wsdn"]
+[ext_resource type="Texture2D" uid="uid://camft3576itvw" path="res://Assets/part_legs.png" id="3_gc476"]
+[ext_resource type="Texture2D" uid="uid://dm8bmlirjhqd0" path="res://Assets/part_body.png" id="4_x53n2"]
+[ext_resource type="Texture2D" uid="uid://c1fxf863bdhiw" path="res://Assets/part_head.png" id="5_dihkr"]
 
 [sub_resource type="Animation" id="Animation_0oswp"]
 length = 0.001

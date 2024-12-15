@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccxrbova5m64h"]
+[gd_scene load_steps=17 format=3 uid="uid://ccxrbova5m64h"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_h062d"]
 [ext_resource type="Texture2D" uid="uid://fqblpc68x83g" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://6pkmu6esn0jj" path="res://Scenes/other/ItemDropZone.tscn" id="7_3ingf"]
 [ext_resource type="Texture2D" uid="uid://d24vix1styov6" path="res://Assets/cube_hackaton.png" id="8_dy0tm"]
 [ext_resource type="Texture2D" uid="uid://blu6i761b6313" path="res://Assets/closed_cube_case.png" id="9_6ibah"]
+[ext_resource type="Script" path="res://Scenes/CubeHack.gd" id="9_o13vy"]
 [ext_resource type="Texture2D" uid="uid://bov3famddt0jb" path="res://Assets/key_pannel_closed.png" id="10_vdn5g"]
 [ext_resource type="Script" path="res://Scenes/KeyPanel.gd" id="11_l46e5"]
 
@@ -19,6 +20,9 @@ size = Vector2(2.08903, 20.9596)
 distance = -246.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e5d4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xicuj"]
+size = Vector2(171, 165)
 
 [node name="room" type="Node2D"]
 script = ExtResource("1_h062d")
@@ -49,6 +53,7 @@ position = Vector2(848, 584)
 position = Vector2(960, 536)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="Equipment" parent="CanvasGroup" instance=ExtResource("4_i53fy")]
 position = Vector2(960, 1008)
@@ -74,6 +79,13 @@ zoneName = "chair"
 [node name="CubeHackaton" type="Sprite2D" parent="."]
 position = Vector2(632, 452)
 texture = ExtResource("8_dy0tm")
+script = ExtResource("9_o13vy")
+
+[node name="Area2D" type="Area2D" parent="CubeHackaton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CubeHackaton/Area2D"]
+position = Vector2(3, 5)
+shape = SubResource("RectangleShape2D_xicuj")
 
 [node name="ClosedCubeCase" type="Sprite2D" parent="."]
 position = Vector2(633, 452)
@@ -85,17 +97,18 @@ texture = ExtResource("10_vdn5g")
 script = ExtResource("11_l46e5")
 
 [node name="DropZone2" parent="KeyPannelClosed" instance=ExtResource("7_3ingf")]
-position = Vector2(36, 28)
+position = Vector2(56, 52)
 rotation = 0.768656
 scale = Vector2(0.665232, 1.0255)
 item = 3
 zoneName = "red_key"
 
 [node name="DropZone3" parent="KeyPannelClosed" instance=ExtResource("7_3ingf")]
-position = Vector2(-32, -39)
+position = Vector2(-48, -56)
 rotation = 0.794634
 scale = Vector2(0.632061, 1)
 item = 2
 zoneName = "orange_key"
 
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]
+[connection signal="input_event" from="CubeHackaton/Area2D" to="CubeHackaton" method="_on_area_2d_input_event"]
