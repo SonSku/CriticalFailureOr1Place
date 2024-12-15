@@ -6,7 +6,6 @@ const skelet_id = 'skelet_id'
 const SKELETON = preload("res://Scenes/skeleton.tscn")
 const GAME = preload("res://Scenes/game.tscn")
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var enabled = true
 
@@ -22,14 +21,6 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if enabled:
 		var direction := Input.get_axis("ui_left", "ui_right")
-		if direction > 0:
-			animated_sprite_2d.flip_h = false
-		elif direction < 0:
-			animated_sprite_2d.flip_h = true
-		if direction == 0:
-			animated_sprite_2d.play("Idle")
-		else:
-			animated_sprite_2d.play("Run")
 		if direction:
 			if !audio_stream_player_2d.is_playing():
 				audio_stream_player_2d.play()

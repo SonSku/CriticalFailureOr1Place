@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var progress_decrease_rate: float = 30.0  # Jak szybko pasek spada
+@export var progress_decrease_rate: float = 15.0  # Jak szybko pasek spada
 @export var progress_increase_amount: float = 5.0  # Jak dużo rośnie przy kliknięciu
 @export var max_progress: float = 100.0  # Maksymalna wartość paska
 @export var min_progress: float = 0.0  # Minimalna wartość paska
