@@ -2,6 +2,9 @@ extends Node
 class_name SceneLoader
 
 var states = {}
+var puzzles = {
+	"password_dyson": preload("res://Scenes/open_door_dyson_puzzle.tscn")
+}
 
 func get_state(id: String):
 	return states.get(id)
@@ -9,8 +12,9 @@ func get_state(id: String):
 func save_state(id: String, state: Dictionary) -> void:
 	states[id] = state
 	
-func display_minigame(scene: PackedScene) -> void:
-	var s = scene.instantiate()
+func display_minigame(scene: String) -> void:
+	print("dziala!")
+	var s = puzzles[scene].instantiate()
 	get_tree().root.add_child(s)
 
 func purge_state(ids_that_start_with: String):

@@ -1,13 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccxrbova5m64h"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_h062d"]
-[ext_resource type="Texture2D" uid="uid://cs4rrxu10pbjo" path="res://Assets/scene_placeholder.png" id="2_s471v"]
+[ext_resource type="Texture2D" uid="uid://ds8oysa4eqhw0" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
 [ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_btc07"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_i53fy"]
-[ext_resource type="PackedScene" uid="uid://4gfwhd0oqjeu" path="res://Scenes/one_line_puzzle.tscn" id="5_lxq52"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_03eg7"]
-size = Vector2(197, 489)
+[ext_resource type="PackedScene" path="res://Scenes/ui/SideMenu.tscn" id="5_edy5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgiv"]
 size = Vector2(2.08903, 20.9596)
@@ -15,18 +12,14 @@ size = Vector2(2.08903, 20.9596)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v5osc"]
 distance = -246.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e5d4m"]
+
 [node name="room" type="Node2D"]
 script = ExtResource("1_h062d")
 
-[node name="ScenePlaceholder" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 544)
-texture = ExtResource("2_s471v")
-
-[node name="LeftDoor" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor"]
-position = Vector2(104, 776)
-shape = SubResource("RectangleShape2D_03eg7")
+texture = ExtResource("2_7aw11")
 
 [node name="RightDoor" type="Area2D" parent="."]
 position = Vector2(1816, 776)
@@ -53,7 +46,13 @@ position = Vector2(960, 536)
 [node name="Equipment" parent="CanvasGroup" instance=ExtResource("4_i53fy")]
 position = Vector2(960, 1008)
 
-[node name="one_line_puzzle" parent="." instance=ExtResource("5_lxq52")]
+[node name="SideMenu" parent="CanvasGroup" instance=ExtResource("5_edy5w")]
+visible = false
 
-[connection signal="body_entered" from="LeftDoor" to="." method="_on_left_door_body_entered"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_e5d4m")
+
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]
