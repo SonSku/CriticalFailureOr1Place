@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk3d4heynhqct"]
+
+[ext_resource type="Texture2D" uid="uid://cu43t34fjcdpn" path="res://Assets/hackaton_scene2_justTheTable.png" id="1_148s1"]
+[ext_resource type="Script" path="res://Scripts/room.gd" id="1_c8poy"]
+[ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_kgyn6"]
+[ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_lra4l"]
+[ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_007jf"]
+[ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_0qg5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgiv"]
+size = Vector2(2.08903, 20.9596)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v5osc"]
+distance = -246.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e5d4m"]
+
+[node name="room" type="Node2D"]
+script = ExtResource("1_c8poy")
+room_name = "room2"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 544)
+texture = ExtResource("1_148s1")
+
+[node name="RightDoor" type="Area2D" parent="."]
+position = Vector2(1816, 776)
+scale = Vector2(91.9087, 23.2828)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightDoor"]
+position = Vector2(0, 0.171799)
+shape = SubResource("RectangleShape2D_ntgiv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(960, 792)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_v5osc")
+
+[node name="Skeleton" parent="." instance=ExtResource("3_kgyn6")]
+position = Vector2(848, 584)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 536)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Equipment" parent="CanvasGroup" instance=ExtResource("4_lra4l")]
+position = Vector2(960, 1008)
+
+[node name="SideMenu" parent="CanvasGroup" instance=ExtResource("5_007jf")]
+visible = false
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_e5d4m")
+
+[node name="Interactable" parent="." instance=ExtResource("6_0qg5c")]
+position = Vector2(1416, 240)
+scale = Vector2(8.27225, 17.9188)
+puzzle_name = "one_line"
+
+[connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]
