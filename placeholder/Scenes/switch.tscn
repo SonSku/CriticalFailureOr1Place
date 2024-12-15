@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dap1brlx21a5"]
+
+[ext_resource type="Texture2D" uid="uid://yh2p3jxq75qr" path="res://Assets/switch_up.png" id="1_nce8p"]
+[ext_resource type="Texture2D" uid="uid://17xoatstg20v" path="res://Assets/switch_down.png" id="2_aexht"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SwitchUp" type="Sprite2D" parent="."]
+texture = ExtResource("1_nce8p")
+
+[node name="SwitchDown" type="Sprite2D" parent="."]
+texture = ExtResource("2_aexht")
