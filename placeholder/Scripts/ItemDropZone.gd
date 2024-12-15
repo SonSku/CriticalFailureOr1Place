@@ -15,5 +15,6 @@ func _process(delta: float) -> void:
 func itemDropped(type: Items.TYPES) -> bool:
 	if type == item:
 		DraggingController.emitItemDropped(zoneName)
+		Inventory.removeItem(type)
 		return true
 	return false

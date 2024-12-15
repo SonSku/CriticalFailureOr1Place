@@ -1,12 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccxrbova5m64h"]
+[gd_scene load_steps=15 format=3 uid="uid://ccxrbova5m64h"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_h062d"]
-[ext_resource type="Texture2D" uid="uid://ds8oysa4eqhw0" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
+[ext_resource type="Texture2D" uid="uid://fqblpc68x83g" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
 [ext_resource type="PackedScene" uid="uid://ditm5udxpprjx" path="res://Scenes/skeleton.tscn" id="3_btc07"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_i53fy"]
 [ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_edy5w"]
 [ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_klypj"]
 [ext_resource type="PackedScene" uid="uid://6pkmu6esn0jj" path="res://Scenes/other/ItemDropZone.tscn" id="7_3ingf"]
+[ext_resource type="Texture2D" uid="uid://d24vix1styov6" path="res://Assets/cube_hackaton.png" id="8_dy0tm"]
+[ext_resource type="Texture2D" uid="uid://blu6i761b6313" path="res://Assets/closed_cube_case.png" id="9_6ibah"]
+[ext_resource type="Texture2D" uid="uid://bov3famddt0jb" path="res://Assets/key_pannel_closed.png" id="10_vdn5g"]
+[ext_resource type="Script" path="res://Scenes/KeyPanel.gd" id="11_l46e5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgiv"]
 size = Vector2(2.08903, 20.9596)
@@ -67,5 +71,32 @@ puzzle_name = "one_line"
 position = Vector2(1416, 752)
 item = 4
 zoneName = "chair"
+
+[node name="CubeHackaton" type="Sprite2D" parent="."]
+position = Vector2(632, 452)
+texture = ExtResource("8_dy0tm")
+
+[node name="ClosedCubeCase" type="Sprite2D" parent="."]
+position = Vector2(633, 452)
+texture = ExtResource("9_6ibah")
+
+[node name="KeyPannelClosed" type="Sprite2D" parent="."]
+position = Vector2(405, 506)
+texture = ExtResource("10_vdn5g")
+script = ExtResource("11_l46e5")
+
+[node name="DropZone2" parent="KeyPannelClosed" instance=ExtResource("7_3ingf")]
+position = Vector2(36, 28)
+rotation = 0.768656
+scale = Vector2(0.665232, 1.0255)
+item = 3
+zoneName = "red_key"
+
+[node name="DropZone3" parent="KeyPannelClosed" instance=ExtResource("7_3ingf")]
+position = Vector2(-32, -39)
+rotation = 0.794634
+scale = Vector2(0.632061, 1)
+item = 2
+zoneName = "orange_key"
 
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]

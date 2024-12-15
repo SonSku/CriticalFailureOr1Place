@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://blwrh6u27h1jv"]
 
 [ext_resource type="Script" path="res://Scenes/ui/InventoryUIControler.gd" id="1_2lple"]
-[ext_resource type="Texture2D" uid="uid://ddt81e0rq1e66" path="res://Assets/bottom menu.png" id="1_t7r7o"]
-[ext_resource type="Texture2D" uid="uid://frjoffyovjwb" path="res://Assets/empty item.png" id="2_awva7"]
+[ext_resource type="Texture2D" uid="uid://ba3ljbg4k4nmf" path="res://Assets/bottom menu.png" id="1_t7r7o"]
+[ext_resource type="Texture2D" uid="uid://by4ybpcoq254e" path="res://Assets/empty item.png" id="2_awva7"]
 [ext_resource type="Script" path="res://Scenes/ui/InventoryItem.gd" id="3_75fig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aykxa"]
