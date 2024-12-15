@@ -9,6 +9,7 @@
 size = Vector2(96, 96)
 
 [node name="Equipment" type="Node2D"]
+z_index = 10
 script = ExtResource("1_2lple")
 
 [node name="BottomMenu" type="Sprite2D" parent="."]
