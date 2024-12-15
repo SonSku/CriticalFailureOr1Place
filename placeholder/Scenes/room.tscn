@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1s1ssaxa6wlb"]
+[gd_scene load_steps=10 format=3 uid="uid://caq2mkcetix0v"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_uydfx"]
-[ext_resource type="Texture2D" uid="uid://dr0vecn4htpg8" path="res://Assets/space_station_scene2.png" id="2_ll0ht"]
-[ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_m0hga"]
+[ext_resource type="Texture2D" uid="uid://b5mrpkeufjlkq" path="res://Assets/space_station_scene2.png" id="2_ll0ht"]
+[ext_resource type="PackedScene" uid="uid://bvhee4a2qc8h1" path="res://Scenes/skeleton.tscn" id="3_m0hga"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_aow0x"]
-[ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_c3so6"]
-[ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_1bol2"]
+[ext_resource type="PackedScene" uid="uid://b1haq3lnfh1nx" path="res://Scenes/ui/SideMenu.tscn" id="5_c3so6"]
+[ext_resource type="PackedScene" path="res://Scenes/interactable.tscn" id="6_1bol2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03eg7"]
 size = Vector2(197, 489)
