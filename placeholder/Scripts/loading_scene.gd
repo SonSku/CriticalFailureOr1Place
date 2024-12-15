@@ -8,6 +8,10 @@ func get_state(id: String):
 
 func save_state(id: String, state: Dictionary) -> void:
 	states[id] = state
+	
+func display_minigame(scene: PackedScene) -> void:
+	var s = scene.instantiate()
+	get_tree().root.add_child(s)
 
 func purge_state(ids_that_start_with: String):
 	var to_erase = []
