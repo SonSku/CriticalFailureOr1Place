@@ -17,6 +17,8 @@ size = Vector2(64, 64)
 size = Vector2(32, 32)
 
 [node name="one_line_puzzle" type="Node2D"]
+position = Vector2(656, 208)
+scale = Vector2(2.43524, 2.38386)
 script = ExtResource("1_mi0xr")
 
 [node name="00" type="Area2D" parent="."]
