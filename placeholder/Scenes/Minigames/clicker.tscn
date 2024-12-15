@@ -1,23 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://nqvy11cf3v7m"]
+[gd_scene load_steps=6 format=3 uid="uid://nqvy11cf3v7m"]
 
 [ext_resource type="Script" path="res://Scripts/clicker.gd" id="1_f2e5s"]
+[ext_resource type="Texture2D" uid="uid://cl82xiwsk6683" path="res://Assets/battery_clicke_emptyr.png" id="2_kd0dd"]
+[ext_resource type="Texture2D" uid="uid://cgknhbqxsq4va" path="res://Assets/battery_clicke_k.png" id="2_onxuc"]
+[ext_resource type="Texture2D" uid="uid://dyaxg66jb4f5o" path="res://Assets/button_k.png" id="4_35ldv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emk3h"]
+texture = ExtResource("2_onxuc")
 
 [node name="Clicker" type="Node2D"]
 script = ExtResource("1_f2e5s")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 244.0
-offset_top = 211.0
-offset_right = 1667.0
-offset_bottom = 389.0
-theme_override_font_sizes/font_size = 60
+[node name="BatteryOverlay" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1069, 597)
+scale = Vector2(1.07812, 0.924074)
+texture = ExtResource("2_kd0dd")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 177.0
-offset_top = 458.0
-offset_right = 1771.0
-offset_bottom = 1031.0
-theme_override_font_sizes/font_size = 100
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 292.0
+offset_top = -577.0
+offset_right = 1632.0
+offset_bottom = -383.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/fill = SubResource("StyleBoxTexture_emk3h")
+value = 30.0
+
+[node name="Button" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 523.0
+offset_top = 493.0
+offset_right = 1425.0
+offset_bottom = 948.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+texture_normal = ExtResource("4_35ldv")
+
+[node name="Label" type="Label" parent="Button"]
+offset_left = 236.0
+offset_top = 120.0
+offset_right = 672.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 150
 text = "Klikaj!"
 
 [node name="Instruction" type="Label" parent="."]
@@ -27,5 +54,13 @@ offset_right = 1394.0
 offset_bottom = 162.0
 theme_override_font_sizes/font_size = 50
 text = "Klikaj jak najszybciej jak to możliwe"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 327.0
+offset_top = 193.0
+offset_right = 1664.0
+offset_bottom = 386.0
+value = 50.0
+texture_progress = ExtResource("2_onxuc")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

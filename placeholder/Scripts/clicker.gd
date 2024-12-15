@@ -8,7 +8,7 @@ extends Node2D
 var progress: float = 0.0  # Aktualna wartość paska
 var game_won: bool = false  # Czy gra została wygrana
 
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var progress_bar: TextureProgressBar = $TextureProgressBar
 @onready var win_label: Label = $WinLabel  # Etykieta wygranej
 
 func _ready():
