@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://4gfwhd0oqjeu"]
+[gd_scene load_steps=7 format=3 uid="uid://vfx6u0a655yf"]
 
-[ext_resource type="Texture2D" uid="uid://hbjclxxwy6p1" path="res://Assets/grey.png" id="1_hqmvy"]
+[ext_resource type="Texture2D" uid="uid://31s3fw712tvr" path="res://Assets/grey.png" id="1_hqmvy"]
 [ext_resource type="Script" path="res://Scripts/one_line_puzzle.gd" id="1_mi0xr"]
-[ext_resource type="Texture2D" uid="uid://ffsv4d84blch" path="res://Assets/red.png" id="2_gd6ok"]
+[ext_resource type="Texture2D" uid="uid://bvqroi0tca5na" path="res://Assets/red.png" id="2_gd6ok"]
 [ext_resource type="Script" path="res://Scripts/robot.gd" id="2_q7uow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0l43"]
