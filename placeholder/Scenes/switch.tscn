@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://dap1brlx21a5"]
+[gd_scene load_steps=5 format=3 uid="uid://b0xuajt0qkc17"]
 
-[ext_resource type="Texture2D" uid="uid://yh2p3jxq75qr" path="res://Assets/switch_up.png" id="1_nce8p"]
-[ext_resource type="Texture2D" uid="uid://17xoatstg20v" path="res://Assets/switch_down.png" id="2_aexht"]
+[ext_resource type="Script" path="res://Scenes/SwitchMinigame.gd" id="1_5pqu0"]
+[ext_resource type="Texture2D" uid="uid://b2jhl75ehupvx" path="res://Assets/switch_up.png" id="1_nce8p"]
+[ext_resource type="Texture2D" uid="uid://bot2ivj5rov6a" path="res://Assets/switch_down.png" id="2_aexht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boaob"]
+size = Vector2(485, 765.5)
 
 [node name="Node2D" type="Node2D"]
+z_index = 20
+script = ExtResource("1_5pqu0")
 
 [node name="SwitchUp" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
 texture = ExtResource("1_nce8p")
 
 [node name="SwitchDown" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
 texture = ExtResource("2_aexht")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(972, 559)
+shape = SubResource("RectangleShape2D_boaob")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

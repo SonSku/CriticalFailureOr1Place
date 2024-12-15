@@ -53,7 +53,6 @@ position = Vector2(848, 584)
 position = Vector2(960, 536)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
-visible = false
 
 [node name="Equipment" parent="CanvasGroup" instance=ExtResource("4_i53fy")]
 position = Vector2(960, 1008)
@@ -87,8 +86,8 @@ script = ExtResource("9_o13vy")
 position = Vector2(3, 5)
 shape = SubResource("RectangleShape2D_xicuj")
 
-[node name="ClosedCubeCase" type="Sprite2D" parent="."]
-position = Vector2(633, 452)
+[node name="ClosedCubeCase" type="Sprite2D" parent="CubeHackaton"]
+position = Vector2(1, 0)
 texture = ExtResource("9_6ibah")
 
 [node name="KeyPannelClosed" type="Sprite2D" parent="."]

@@ -1,6 +1,8 @@
 extends Node
 class_name SceneLoader
 
+signal unlocked_bitehack
+
 var states = {}
 var puzzles = {
 	"password_dyson": preload("res://Scenes/open_door_dyson_puzzle.tscn"),
@@ -8,6 +10,9 @@ var puzzles = {
 	"clicker": preload("res://Scenes/Minigames/clicker.tscn"),
 	"switch": preload("res://Scenes/switch.tscn")
 }
+
+func emit_unlock():
+	emit_signal("unlocked_bitehack")
 
 func get_state(id: String):
 	return states.get(id)

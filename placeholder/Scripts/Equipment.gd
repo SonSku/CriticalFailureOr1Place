@@ -44,6 +44,8 @@ func hasItem(type: Items.TYPES) -> bool:
 
 func enableDice(d: Items.DICE):
 	dice[d] = 1
+	emit_signal("inventory_update")
 
 func disableDice(d: Items.DICE):
 	dice[d] = 0
+	emit_signal("inventory_update")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmpn4xyxj12ug"]
+[gd_scene load_steps=14 format=3 uid="uid://cmpn4xyxj12ug"]
 
 [ext_resource type="Texture2D" uid="uid://blh5ydyrniq5v" path="res://Assets/side menu open.png" id="1_8emtu"]
 [ext_resource type="Script" path="res://Scripts/SideMenu.gd" id="1_qflrv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://camft3576itvw" path="res://Assets/part_legs.png" id="3_gc476"]
 [ext_resource type="Texture2D" uid="uid://dm8bmlirjhqd0" path="res://Assets/part_body.png" id="4_x53n2"]
 [ext_resource type="Texture2D" uid="uid://c1fxf863bdhiw" path="res://Assets/part_head.png" id="5_dihkr"]
+[ext_resource type="Texture2D" uid="uid://cgs8uf0omomq" path="res://Assets/inverntory_hackaton_cube.png" id="7_6ijeu"]
 
 [sub_resource type="Animation" id="Animation_0oswp"]
 length = 0.001
@@ -64,6 +65,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_de3fc"]
 size = Vector2(85, 120)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je8aa"]
+size = Vector2(103, 104)
+
 [node name="SideMenu" type="Node2D"]
 z_index = 10
 script = ExtResource("1_qflrv")
@@ -100,5 +104,16 @@ position = Vector2(600, 60)
 position = Vector2(32.5, 65)
 shape = SubResource("RectangleShape2D_de3fc")
 
+[node name="InverntoryHackatonCube" type="Sprite2D" parent="."]
+position = Vector2(484, 131)
+texture = ExtResource("7_6ijeu")
+
+[node name="Area2D" type="Area2D" parent="InverntoryHackatonCube"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InverntoryHackatonCube/Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_je8aa")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="InverntoryHackatonCube/Area2D" to="." method="_onbiteHackClick"]
