@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1s1ssaxa6wlb"]
+[gd_scene load_steps=9 format=3 uid="uid://d1s1ssaxa6wlb"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_uydfx"]
 [ext_resource type="Texture2D" uid="uid://dr0vecn4htpg8" path="res://Assets/space_station_scene2.png" id="2_ll0ht"]
 [ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_m0hga"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_aow0x"]
 [ext_resource type="PackedScene" path="res://Scenes/ui/SideMenu.tscn" id="5_c3so6"]
-[ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_1bol2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03eg7"]
 size = Vector2(197, 489)
@@ -17,7 +16,6 @@ distance = -246.0
 
 [node name="room" type="Node2D"]
 script = ExtResource("1_uydfx")
-room_name = "room"
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 544)
@@ -54,9 +52,5 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("WorldBoundaryShape2D_mojmr")
-
-[node name="Interactable" parent="." instance=ExtResource("6_1bol2")]
-position = Vector2(1816, 488)
-scale = Vector2(5.57105, 16.2698)
 
 [connection signal="body_entered" from="LeftDoor" to="." method="_on_left_door_body_entered"]

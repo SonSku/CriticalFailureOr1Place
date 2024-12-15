@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://blwrh6u27h1jv"]
 
 [ext_resource type="Script" path="res://Scenes/ui/InventoryUIControler.gd" id="1_2lple"]
-[ext_resource type="Texture2D" uid="uid://dejii76aptgdb" path="res://Assets/bottom menu.png" id="1_t7r7o"]
-[ext_resource type="Texture2D" uid="uid://x02ik7juhcbr" path="res://Assets/empty item.png" id="2_awva7"]
+[ext_resource type="Texture2D" uid="uid://ddt81e0rq1e66" path="res://Assets/bottom menu.png" id="1_t7r7o"]
+[ext_resource type="Texture2D" uid="uid://frjoffyovjwb" path="res://Assets/empty item.png" id="2_awva7"]
 [ext_resource type="Script" path="res://Scenes/ui/InventoryItem.gd" id="3_75fig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aykxa"]
@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_aykxa")
 
 [node name="Area2D2" type="Area2D" parent="BottomMenu"]
 position = Vector2(-60, 16)
+script = ExtResource("3_75fig")
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomMenu/Area2D2"]
 texture = ExtResource("2_awva7")
@@ -35,6 +36,7 @@ shape = SubResource("RectangleShape2D_aykxa")
 
 [node name="Area2D3" type="Area2D" parent="BottomMenu"]
 position = Vector2(60, 16)
+script = ExtResource("3_75fig")
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomMenu/Area2D3"]
 texture = ExtResource("2_awva7")
@@ -44,6 +46,7 @@ shape = SubResource("RectangleShape2D_aykxa")
 
 [node name="Area2D4" type="Area2D" parent="BottomMenu"]
 position = Vector2(180, 16)
+script = ExtResource("3_75fig")
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomMenu/Area2D4"]
 texture = ExtResource("2_awva7")
@@ -54,3 +57,6 @@ shape = SubResource("RectangleShape2D_aykxa")
 [connection signal="input_event" from="BottomMenu/Area2D" to="BottomMenu/Area2D" method="_on_input_event"]
 [connection signal="mouse_entered" from="BottomMenu/Area2D" to="BottomMenu/Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="BottomMenu/Area2D" to="BottomMenu/Area2D" method="_on_mouse_exited"]
+[connection signal="input_event" from="BottomMenu/Area2D2" to="BottomMenu/Area2D2" method="_on_input_event"]
+[connection signal="mouse_entered" from="BottomMenu/Area2D2" to="BottomMenu/Area2D2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BottomMenu/Area2D2" to="BottomMenu/Area2D2" method="_on_mouse_exited"]

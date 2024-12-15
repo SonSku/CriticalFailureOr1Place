@@ -8,6 +8,7 @@ position = Vector2(336, 72)
 script = ExtResource("1_p5pqn")
 
 [node name="Button" type="Button" parent="."]
+z_index = 1
 offset_left = 424.0
 offset_top = 320.0
 offset_right = 442.0
@@ -17,6 +18,7 @@ theme_override_font_sizes/font_size = 0
 text = "1"
 
 [node name="Button2" type="Button" parent="."]
+z_index = 1
 offset_left = 552.0
 offset_top = 320.0
 offset_right = 570.0
@@ -26,6 +28,7 @@ theme_override_font_sizes/font_size = 0
 text = "2"
 
 [node name="Button3" type="Button" parent="."]
+z_index = 1
 offset_left = 675.0
 offset_top = 320.0
 offset_right = 693.0
@@ -35,6 +38,7 @@ theme_override_font_sizes/font_size = 0
 text = "3"
 
 [node name="Button4" type="Button" parent="."]
+z_index = 1
 offset_left = 424.0
 offset_top = 440.0
 offset_right = 442.0
@@ -44,6 +48,7 @@ theme_override_font_sizes/font_size = 0
 text = "4"
 
 [node name="Button5" type="Button" parent="."]
+z_index = 1
 offset_left = 547.0
 offset_top = 440.0
 offset_right = 565.0
@@ -53,6 +58,7 @@ theme_override_font_sizes/font_size = 0
 text = "5"
 
 [node name="Button6" type="Button" parent="."]
+z_index = 1
 offset_left = 670.0
 offset_top = 440.0
 offset_right = 688.0
@@ -62,6 +68,7 @@ theme_override_font_sizes/font_size = 0
 text = "6"
 
 [node name="Button7" type="Button" parent="."]
+z_index = 1
 offset_left = 424.0
 offset_top = 560.0
 offset_right = 442.0
@@ -71,6 +78,7 @@ theme_override_font_sizes/font_size = 0
 text = "7"
 
 [node name="Button8" type="Button" parent="."]
+z_index = 1
 offset_left = 547.0
 offset_top = 560.0
 offset_right = 565.0
@@ -80,6 +88,7 @@ theme_override_font_sizes/font_size = 0
 text = "8"
 
 [node name="Button9" type="Button" parent="."]
+z_index = 1
 offset_left = 670.0
 offset_top = 560.0
 offset_right = 688.0
@@ -89,6 +98,7 @@ theme_override_font_sizes/font_size = 0
 text = "9"
 
 [node name="Button10" type="Button" parent="."]
+z_index = 1
 offset_left = 680.0
 offset_top = 688.0
 offset_right = 698.0
@@ -98,6 +108,7 @@ theme_override_font_sizes/font_size = 0
 text = "X"
 
 [node name="Pin" type="Label" parent="."]
+z_index = 1
 offset_left = 424.0
 offset_top = 184.0
 offset_right = 464.0
@@ -105,13 +116,12 @@ offset_bottom = 207.0
 scale = Vector2(8.98529, 4.58595)
 
 [node name="CodePannel" type="Sprite2D" parent="."]
-z_index = -1
 position = Vector2(600, 480)
 scale = Vector2(1.47188, 1.44772)
 texture = ExtResource("2_r4on6")
 
 [node name="Button11" type="Button" parent="."]
-z_index = 3
+z_index = 1
 offset_left = 547.0
 offset_top = 680.0
 offset_right = 565.0

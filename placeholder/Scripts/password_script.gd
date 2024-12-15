@@ -1,6 +1,9 @@
 extends Node2D
 
+static var puzzel_name = "password_dyson"
+
 var enteredPin = []
+const properPin = [2, 2, 8, 0]
 @onready var button: Button = $Button
 @onready var button_2: Button = $Button2
 @onready var button_3: Button = $Button3
@@ -12,6 +15,23 @@ var enteredPin = []
 @onready var button_9: Button = $Button9
 @onready var pin: Label = $Pin
 @onready var button_11: Button = $Button11
+const Skeleton = preload("res://Scripts/skeleton.gd")
+
+func compare_array(arr1: Array, arr2: Array) -> bool:
+	for i in range(arr1.size()):
+		if arr1[i] != arr2[i]: return false
+	return true
+
+func _process(delta) -> void:
+	if enteredPin.size() == 4:
+		if compare_array(enteredPin, properPin):
+			var state = {
+				"blocked": true
+			}
+			LoadingScene.save_state(puzzel_name, state)
+			Inventory.addItem(Items.TYPES.ORANGE_KEY)
+			get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+			queue_free()
 
 func _on_button_pressed() -> void:
 	eneteredCharacter(button)
@@ -81,3 +101,8 @@ func update_label() -> void:
 func _on_button_11_pressed() -> void:
 	eneteredCharacter(button_11)
 	update_label()
+	
+func _input(ev) -> void:
+	if Input.is_key_pressed(KEY_Q):
+		get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+		queue_free()

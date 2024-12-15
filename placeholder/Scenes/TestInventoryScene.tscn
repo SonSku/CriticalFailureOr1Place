@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=4 format=3 uid="uid://5l00fwvvugyl"]
+=======
 [gd_scene load_steps=5 format=3 uid="uid://bj7w2jwxvvnha"]
+>>>>>>> 43a2a8e9e4717c8971a060cdcebb05a66ffe748d
 
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="1_0n7c6"]
 [ext_resource type="Script" path="res://Scripts/test_inventory_scene.gd" id="1_rcutg"]
