@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if LoadingScene.get_state("room2"):
 		body.position.x = 1308
-		body.position.y = 400
+		body.position.y = 300
 
 
 

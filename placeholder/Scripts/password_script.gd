@@ -33,8 +33,8 @@ func _process(delta) -> void:
 			}
 			LoadingScene.save_state(puzzel_name, state)
 			Inventory.addItem(Items.TYPES.ORANGE_KEY)
-			get_tree().root.get_node("room").get_node("Skeleton").enabled = true
 			await get_tree().create_timer(1).timeout
+			get_tree().root.get_node("room").get_node("Skeleton").enabled = true
 			queue_free()
 
 func _on_button_pressed() -> void:

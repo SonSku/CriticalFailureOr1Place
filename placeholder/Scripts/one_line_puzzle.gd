@@ -48,6 +48,7 @@ func _on_area2d_body_entered(cialo, pole):
 		}
 		LoadingScene.save_state(puzzel_name, state)
 		get_tree().root.get_node("room").get_node("Skeleton").enabled = true
+		Inventory.addItem(Items.TYPES.RED_KEY)
 		queue_free()
 	elif tablica_2d[int(ids[1])][int(ids[0])] != 2 and field_counter == 14:
 		print("HAHA YOU LOST!")
