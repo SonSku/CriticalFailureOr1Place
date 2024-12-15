@@ -4,8 +4,7 @@ class_name SceneLoader
 var states = {}
 var puzzles = {
 	"password_dyson": preload("res://Scenes/open_door_dyson_puzzle.tscn"),
-	"one_line": preload("res://Scenes/one_line_puzzle.tscn"),
-	"clicker": preload("res://Scenes/Minigames/clicker.tscn")
+	"one_line": preload("res://Scenes/one_line_puzzle.tscn")
 }
 
 func get_state(id: String):

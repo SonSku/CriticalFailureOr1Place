@@ -1,16 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://p0lfousb4eqc"]
+[gd_scene load_steps=11 format=3 uid="uid://ccxrbova5m64h"]
 
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_h062d"]
-[ext_resource type="Texture2D" uid="uid://cglrh3pdw4l4j" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
-[ext_resource type="PackedScene" uid="uid://bvhee4a2qc8h1" path="res://Scenes/skeleton.tscn" id="3_btc07"]
+[ext_resource type="Texture2D" uid="uid://ds8oysa4eqhw0" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
+[ext_resource type="PackedScene" uid="uid://ditm5udxpprjx" path="res://Scenes/skeleton.tscn" id="3_btc07"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_i53fy"]
-[ext_resource type="PackedScene" uid="uid://b1haq3lnfh1nx" path="res://Scenes/ui/SideMenu.tscn" id="5_edy5w"]
-[ext_resource type="PackedScene" path="res://Scenes/interactable.tscn" id="6_klypj"]
+[ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_edy5w"]
+[ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_klypj"]
 [ext_resource type="PackedScene" uid="uid://6pkmu6esn0jj" path="res://Scenes/other/ItemDropZone.tscn" id="7_3ingf"]
-[ext_resource type="Texture2D" uid="uid://x3at64wyqx72" path="res://Assets/key_pannel_closed.png" id="8_yb7ie"]
-[ext_resource type="Script" path="res://Scripts/KeyPanel.gd" id="9_i26d8"]
-[ext_resource type="Texture2D" uid="uid://dwbaxgmva5dd" path="res://Assets/cube_hackaton.png" id="10_twhb1"]
-[ext_resource type="Texture2D" uid="uid://cgid15t3kgnix" path="res://Assets/closed_cube_case.png" id="11_8w16t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgiv"]
 size = Vector2(2.08903, 20.9596)
@@ -71,32 +67,5 @@ puzzle_name = "one_line"
 position = Vector2(1416, 752)
 item = 4
 zoneName = "chair"
-
-[node name="KeyPannelClosed" type="Sprite2D" parent="."]
-position = Vector2(382, 503)
-texture = ExtResource("8_yb7ie")
-script = ExtResource("9_i26d8")
-
-[node name="DropZone2" parent="KeyPannelClosed" instance=ExtResource("7_3ingf")]
-position = Vector2(29, 26)
-rotation = 0.770987
-scale = Vector2(0.404776, 0.976321)
-item = 3
-zoneName = "red_key"
-
-[node name="DropZone3" parent="KeyPannelClosed" instance=ExtResource("7_3ingf")]
-position = Vector2(-26, -33)
-rotation = 0.774932
-scale = Vector2(0.415951, 1.08994)
-item = 2
-zoneName = "orange_key"
-
-[node name="CubeHackaton" type="Sprite2D" parent="."]
-position = Vector2(628, 449)
-texture = ExtResource("10_twhb1")
-
-[node name="ClosedCubeCase" type="Sprite2D" parent="."]
-position = Vector2(634, 452)
-texture = ExtResource("11_8w16t")
 
 [connection signal="body_entered" from="RightDoor" to="." method="_on_right_door_body_entered"]

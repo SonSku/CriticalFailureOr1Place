@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cu43t34fjcdpn" path="res://Assets/hackaton_scene2_justTheTable.png" id="1_148s1"]
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_c8poy"]
-[ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_kgyn6"]
+[ext_resource type="PackedScene" uid="uid://ditm5udxpprjx" path="res://Scenes/skeleton.tscn" id="3_kgyn6"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_lra4l"]
 [ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_007jf"]
 [ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_0qg5c"]

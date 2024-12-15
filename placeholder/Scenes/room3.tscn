@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs5f1rjesnbiu"]
+
+[ext_resource type="Texture2D" uid="uid://ce1na2ishga8p" path="res://Assets/hackaton_scene1_deactivated.png" id="1_ob58f"]
+[ext_resource type="PackedScene" uid="uid://ditm5udxpprjx" path="res://Scenes/skeleton.tscn" id="2_dhfir"]
+[ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="3_6te1w"]
+
+[node name="room" type="Node2D"]
+
+[node name="HackatonScene1Deactivated" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_ob58f")
+
+[node name="Skeleton" parent="." instance=ExtResource("2_dhfir")]
+position = Vector2(275, 415)
+scale = Vector2(1.5, 1.5)
+
+[node name="Interactable" parent="." instance=ExtResource("3_6te1w")]
+position = Vector2(850, 705)
+scale = Vector2(-17.1221, 22.5677)
+puzzle_name = "clicker"
