@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ds8oysa4eqhw0" path="res://Assets/space_station_scene1.png" id="2_7aw11"]
 [ext_resource type="PackedScene" uid="uid://ck6wme2v28727" path="res://Scenes/skeleton.tscn" id="3_btc07"]
 [ext_resource type="PackedScene" uid="uid://blwrh6u27h1jv" path="res://Scenes/ui/equipment.tscn" id="4_i53fy"]
-[ext_resource type="PackedScene" path="res://Scenes/ui/SideMenu.tscn" id="5_edy5w"]
+[ext_resource type="PackedScene" uid="uid://cmpn4xyxj12ug" path="res://Scenes/ui/SideMenu.tscn" id="5_edy5w"]
 [ext_resource type="PackedScene" uid="uid://diskhfbo02ep1" path="res://Scenes/interactable.tscn" id="6_klypj"]
 [ext_resource type="PackedScene" uid="uid://6pkmu6esn0jj" path="res://Scenes/other/ItemDropZone.tscn" id="7_3ingf"]
 

@@ -1,12 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck6wme2v28727"]
+[gd_scene load_steps=12 format=3 uid="uid://ck6wme2v28727"]
 
 [ext_resource type="Script" path="res://Scripts/skeleton.gd" id="1_vaapv"]
 [ext_resource type="Texture2D" uid="uid://bs6snwvqlt56d" path="res://Assets/kostek.png" id="2_5gh6y"]
+[ext_resource type="Texture2D" uid="uid://cx2nksodn3gbh" path="res://Assets/kostek_anim_sheet.png" id="3_b5rg5"]
 [ext_resource type="AudioStream" uid="uid://jwk3cgkl0qw3" path="res://Assets/Sounds/chodzenie_szkieleta2.mp3" id="3_bebv3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v60qc"]
 atlas = ExtResource("2_5gh6y")
 region = Rect2(0, 0, 204, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gtjw"]
+atlas = ExtResource("3_b5rg5")
+region = Rect2(0, 0, 204, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af2xw"]
+atlas = ExtResource("3_b5rg5")
+region = Rect2(204, 0, 204, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6karc"]
+atlas = ExtResource("3_b5rg5")
+region = Rect2(408, 0, 204, 435)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtc4w"]
+atlas = ExtResource("3_b5rg5")
+region = Rect2(612, 0, 204, 435)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yw53m"]
 animations = [{
@@ -15,8 +32,25 @@ animations = [{
 "texture": SubResource("AtlasTexture_v60qc")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gtjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af2xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6karc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtc4w")
+}],
+"loop": false,
+"name": &"Run",
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qilhh"]
@@ -30,11 +64,9 @@ script = ExtResource("1_vaapv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(103, 217)
 sprite_frames = SubResource("SpriteFrames_yw53m")
-<<<<<<< HEAD
-=======
-animation = &"Idle"
-frame_progress = 0.8125
->>>>>>> 4789d7a1e0130ef35395f2225b794202ed4ddc84
+animation = &"Run"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(99.5, 218.5)

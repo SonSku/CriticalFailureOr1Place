@@ -65,6 +65,7 @@ _data = {
 size = Vector2(85, 120)
 
 [node name="SideMenu" type="Node2D"]
+z_index = 10
 script = ExtResource("1_qflrv")
 
 [node name="SideMenuOpen" type="Sprite2D" parent="."]
